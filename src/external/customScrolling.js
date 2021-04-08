@@ -40,6 +40,43 @@
   }
   disableScroll();
 
+  ///Retreive sections
+  let sections = document.getElementsByTagName('section');
+  let counter = 0;
+  ///Add event listener for wheel
+  window.addEventListener("wheel", event => {
+    const delta = Math.sign(event.deltaY);
+    console.info(delta);
+    if(delta == 1) {
+      if (counter < sections.length-1) counter++;
+      sections[counter].scrollIntoView({ behavior: 'smooth' });
+    }
+    else{
+      if (counter > 0) counter--;
+      console.log(counter);
+      sections[counter].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  ///Add event listener for arrow keys
+  document.addEventListener('keydown', function (e) {
+    switch (e.code) {
+      case 'ArrowUp':
+        if (counter < sections.length-1) counter++;
+        console.log(sections.length + ' lenght');
+        console.log(counter);
+        sections[counter].scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'ArrowDown':
+        if (counter > 0) counter--;
+        console.log(counter);
+        sections[counter].scrollIntoView({ behavior: 'smooth' });
+        break;
+      default:
+        break; // do not block other keys
+    }
+  });
+
   // call this to Enable
   function enableScroll() {
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
