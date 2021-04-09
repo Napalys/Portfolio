@@ -64,26 +64,26 @@ class Header extends React.Component {
           <a id = "heroMenu"
             className="btn btn-default round-button onVisitSection"
             style={{ top: '40%' }}
-            onClick={menuBtnClicked.bind("heroMenu")}
+            onClick={menuBtnClicked.bind(this, 'heroMenu', 'hero')}
           >
             0
           </a>
           <span className="title" style={{ top: '41%' }}>
             Home
           </span>
-          <a className="btn btn-default round-button" style={{ top: '45%' }}>
+          <a id = "aboutMenu" className="btn btn-default round-button" style={{ top: '45%' }} onClick={menuBtnClicked.bind(this, 'aboutMenu', 'about')}>
             1
           </a>
           <span className="title" style={{ top: '46%' }}>
             About
           </span>
-          <a className="btn btn-default round-button" style={{ top: '50%' }}>
+          <a id = "projectsMenu" className="btn btn-default round-button" style={{ top: '50%' }} onClick={menuBtnClicked.bind(this, 'projectsMenu', 'projects')}>
             2
           </a>
           <span className="title" style={{ top: '51%' }}>
             Projects
           </span>
-          <a className="btn btn-default round-button" style={{ top: '55%' }}>
+          <a id = "contactMenu" className="btn btn-default round-button" style={{ top: '55%' }} onClick={menuBtnClicked.bind(this, 'contactMenu', 'contact')}>
             3
           </a>
           <span className="title" style={{ top: '56%' }}>
