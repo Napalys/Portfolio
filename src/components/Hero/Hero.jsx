@@ -4,6 +4,9 @@ import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import { animateIndexPage } from '../../external/demo';
 
+const { heroBtnClicked } = require(`../../external/customScrolling`);
+const { menuBtnClicked } = require(`../../external/customScrolling`);
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,6 @@ class Header extends React.Component {
     const { isDesktop, isMobile } = this.state;
 
     return (
-
       <div className="hero-container" style={{ display: 'grid' }}>
         <div
           style={{
@@ -59,30 +61,56 @@ class Header extends React.Component {
             display: 'grid',
           }}
         >
+          <a id = "heroMenu"
+            className="btn btn-default round-button onVisitSection"
+            style={{ top: '40%' }}
+            onClick={menuBtnClicked.bind("heroMenu")}
+          >
+            0
+          </a>
+          <span className="title" style={{ top: '41%' }}>
+            Home
+          </span>
+          <a className="btn btn-default round-button" style={{ top: '45%' }}>
+            1
+          </a>
+          <span className="title" style={{ top: '46%' }}>
+            About
+          </span>
+          <a className="btn btn-default round-button" style={{ top: '50%' }}>
+            2
+          </a>
+          <span className="title" style={{ top: '51%' }}>
+            Projects
+          </span>
+          <a className="btn btn-default round-button" style={{ top: '55%' }}>
+            3
+          </a>
+          <span className="title" style={{ top: '56%' }}>
+            Contact
+          </span>
           <Container>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
               <h1 className="hero-title">
                 {title || 'Hi, my name is'}{' '}
                 <span className="text-color-main">{name || 'Napalys Klicius'}</span>
+                .
                 <br />
-                {subtitle || "I'm the Software Developer you've been looking for."}
+                {"I'm the "}
+                <span className="text-color-main">Software Developer</span>
+                {" you've been looking for."}
               </h1>
             </Fade>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <p className="hero-cta">
-                <span className="cta-btn cta-btn--hero">
-                  <Link to="about" smooth duration={1000}>
-                    {cta || 'Know more'}
-                  </Link>
-                </span>
+                <button id="hero-btn" className="cta-btn cta-btn--hero" onClick={heroBtnClicked}>
+                  {cta}
+                </button>
               </p>
             </Fade>
           </Container>
-
         </section>
-
       </div>
-
     );
   }
 }
