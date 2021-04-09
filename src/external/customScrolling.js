@@ -70,17 +70,7 @@ let sections;
       scrollInAction = false;
     }, 750);
   });
-  // document.addEventListener("DOMContentLoaded", function(event) {
-  //   document.getElementById('hero-btn').addEventListener('click', function () {
-  //     const buttons = document.getElementsByClassName('round-button');
-  //     buttons[counter].classList.remove('onVisitSection');
-  //     counter = 3;
-  //     buttons[counter].classList.add('onVisitSection');
-  //     setTimeout(function () {
-  //       scrollInAction = false;
-  //     }, 750);
-  //   });
-  // });
+
   // Add event listener for arrow keys
   document.addEventListener('keydown', function (e) {
     if (scrollInAction) return;
@@ -123,6 +113,7 @@ const heroBtnClicked = () => {
   counter = 3;
   sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
   buttons[counter].classList.add('onVisitSection');
+  scrollInAction = true;
   // eslint-disable-next-line func-names
   setTimeout(function () {
     scrollInAction = false;
@@ -136,14 +127,15 @@ const menuBtnClicked = (menuID, sectionID) => {
   document.getElementById(menuID).classList.add('onVisitSection');
   document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth', duration: '750' });
   for (let i = 0; i < sections.length; i++) {
-    if(sections[i].id === sectionID){
+    if (sections[i].id === sectionID) {
       counter = i;
     }
   }
+  scrollInAction = true;
+  // eslint-disable-next-line func-names
   setTimeout(function () {
     scrollInAction = false;
   }, 750);
-
 };
 
 module.exports.heroBtnClicked = heroBtnClicked;
