@@ -34,6 +34,7 @@ class Header extends React.Component {
     const { isDesktop, isMobile } = this.state;
 
     return (
+
       <div className="hero-container" style={{ display: 'grid' }}>
         <div
           style={{
@@ -76,12 +77,12 @@ class Header extends React.Component {
                 </span>
               </p>
             </Fade>
-            {/* <div className="container demo"> */}
-            {/*  <div className="content" /> */}
-            {/* </div> */}
           </Container>
+
         </section>
+
       </div>
+
     );
   }
 }
