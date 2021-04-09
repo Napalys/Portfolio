@@ -117,6 +117,7 @@ let sections;
 })();
 
 const heroBtnClicked = () => {
+  if (scrollInAction) return;
   const buttons = document.getElementsByClassName('round-button');
   buttons[counter].classList.remove('onVisitSection');
   counter = 3;
@@ -128,12 +129,22 @@ const heroBtnClicked = () => {
   }, 750);
 };
 
-// const menuBtnClicked = (id) => {
-//   const buttons = document.getElementsByClassName('round-button');
-//   buttons[counter].classList.remove('onVisitSection');
-//   document.getElementById(id).classList.add('onVisitSection');
-//   console.log(id);
-// };
+const menuBtnClicked = (menuID, sectionID) => {
+  if (scrollInAction) return;
+  const buttons = document.getElementsByClassName('round-button');
+  buttons[counter].classList.remove('onVisitSection');
+  document.getElementById(menuID).classList.add('onVisitSection');
+  document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth', duration: '750' });
+  for (let i = 0; i < sections.length; i++) {
+    if(sections[i].id === sectionID){
+      counter = i;
+    }
+  }
+  setTimeout(function () {
+    scrollInAction = false;
+  }, 750);
+
+};
 
 module.exports.heroBtnClicked = heroBtnClicked;
 module.exports.menuBtnClicked = menuBtnClicked;
