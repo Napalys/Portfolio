@@ -1,3 +1,7 @@
+let counter = 0;
+let scrollInAction = false;
+let sections;
+
 (function () {
   // left: 37, up: 38, right: 39, down: 40,
   // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -7,6 +11,7 @@
     e.preventDefault();
   }
 
+  // eslint-disable-next-line consistent-return
   function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
       preventDefault(e);
@@ -26,6 +31,7 @@
         },
       })
     );
+    // eslint-disable-next-line no-empty
   } catch (e) {}
 
   const wheelOpt = supportsPassive ? { passive: false } : false;
@@ -40,41 +46,65 @@
   }
   disableScroll();
 
-  ///Retreive sections
-  let sections = document.getElementsByTagName('section');
-  let counter = 0;
-  ///Add event listener for wheel
-  window.addEventListener("wheel", event => {
-    const delta = Math.sign(event.deltaY);
-    console.info(delta);
-    if(delta == 1) {
-      if (counter < sections.length-1) counter++;
-      sections[counter].scrollIntoView({ behavior: 'smooth' });
-    }
-    else{
-      if (counter > 0) counter--;
-      console.log(counter);
-      sections[counter].scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  // Retrieve sections
+  sections = document.getElementsByTagName('section');
 
-  ///Add event listener for arrow keys
+  // Add event listener for wheel
+  window.addEventListener('wheel', (event) => {
+    const buttons = document.getElementsByClassName('round-button');
+    if (scrollInAction) return;
+    const delta = Math.sign(event.deltaY);
+    if (delta === 1) {
+      buttons[counter].classList.remove('onVisitSection');
+      if (counter < sections.length - 1) counter++;
+      sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
+      buttons[counter].classList.add('onVisitSection');
+    } else {
+      buttons[counter].classList.remove('onVisitSection');
+      if (counter > 0) counter--;
+      buttons[counter].classList.add('onVisitSection');
+      sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
+    }
+    scrollInAction = true;
+    setTimeout(function () {
+      scrollInAction = false;
+    }, 750);
+  });
+  // document.addEventListener("DOMContentLoaded", function(event) {
+  //   document.getElementById('hero-btn').addEventListener('click', function () {
+  //     const buttons = document.getElementsByClassName('round-button');
+  //     buttons[counter].classList.remove('onVisitSection');
+  //     counter = 3;
+  //     buttons[counter].classList.add('onVisitSection');
+  //     setTimeout(function () {
+  //       scrollInAction = false;
+  //     }, 750);
+  //   });
+  // });
+  // Add event listener for arrow keys
   document.addEventListener('keydown', function (e) {
+    if (scrollInAction) return;
+    const buttons = document.getElementsByClassName('round-button');
     switch (e.code) {
-      case 'ArrowUp':
-        if (counter < sections.length-1) counter++;
-        console.log(sections.length + ' lenght');
-        console.log(counter);
-        sections[counter].scrollIntoView({ behavior: 'smooth' });
-        break;
       case 'ArrowDown':
+        buttons[counter].classList.remove('onVisitSection');
+        if (counter < sections.length - 1) counter++;
+        buttons[counter].classList.add('onVisitSection');
+        sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
+        break;
+      case 'ArrowUp':
+        buttons[counter].classList.remove('onVisitSection');
         if (counter > 0) counter--;
-        console.log(counter);
-        sections[counter].scrollIntoView({ behavior: 'smooth' });
+        buttons[counter].classList.add('onVisitSection');
+        sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
         break;
       default:
         break; // do not block other keys
     }
+    scrollInAction = true;
+    setTimeout(function () {
+      scrollInAction = false;
+    }, 750);
   });
 
   // call this to Enable
@@ -85,3 +115,25 @@
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
   }
 })();
+
+const heroBtnClicked = () => {
+  const buttons = document.getElementsByClassName('round-button');
+  buttons[counter].classList.remove('onVisitSection');
+  counter = 3;
+  sections[counter].scrollIntoView({ behavior: 'smooth', duration: '750' });
+  buttons[counter].classList.add('onVisitSection');
+  // eslint-disable-next-line func-names
+  setTimeout(function () {
+    scrollInAction = false;
+  }, 750);
+};
+
+// const menuBtnClicked = (id) => {
+//   const buttons = document.getElementsByClassName('round-button');
+//   buttons[counter].classList.remove('onVisitSection');
+//   document.getElementById(id).classList.add('onVisitSection');
+//   console.log(id);
+// };
+
+module.exports.heroBtnClicked = heroBtnClicked;
+module.exports.menuBtnClicked = menuBtnClicked;

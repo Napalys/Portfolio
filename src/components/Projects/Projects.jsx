@@ -24,18 +24,11 @@ const Projects = () => {
 
   return (
     <section id="projects">
-
       <Container>
-            <a className="btn btn-default round-button" style={{top: '40%'}}>0</a>
-        <span className="title">About</span>
-            <a className="btn btn-default round-button" style={{top: '45%'}}>1</a>
-            <a className="btn btn-default round-button" style={{top: '50%'}}>2</a>
-            <a className="btn btn-default round-button" style={{top: '55%'}}>3</a>
         <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
             const { title, info, info2, url, repo, img, id } = project;
-
             return (
               <Row key={id}>
                 <Col lg={4} sm={12}>
