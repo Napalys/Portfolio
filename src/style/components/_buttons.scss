@@ -115,8 +115,9 @@
   background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
   border: #ffffff00;
   color: white;
-  width: 35px;
-  height: 35px;
+  //width: 35px;
+  //height: 35px;
+  //right: 25px;
   text-align: center;
 }
 .round-button:hover + .title {
@@ -127,8 +128,9 @@
   background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
   border: #ffffff00;
   color: white;
-  width: 35px;
-  height: 35px;
+  //width: 35px;
+  //height: 35px;
+  //right: 25px;
   text-align: center;
 }
 .onVisitSection + .title {

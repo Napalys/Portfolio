@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
+import { StaticImage } from 'gatsby-plugin-image';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
+import '../../external/customScrolling';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -23,7 +25,16 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about">
+    <section id="about" style={{ display: 'grid' }}>
+      {/* <StaticImage */}
+      {/*  style={{ gridArea: '1/1' }} */}
+      {/*  layout="fullWidth" */}
+      {/*  aspectRatio={3} */}
+      {/*  alt="" */}
+      {/*  src="../../images/codeImg.png" */}
+      {/*  formats={['auto', 'webp', 'avif']} */}
+      {/* /> */}
+      {/* <div style={{ gridArea: '1/1', position: 'relative', placeItems: 'center', display: 'grid' }}> */}
       <Container>
         <Title title="About Me" />
         <Row className="about-wrapper">
@@ -65,6 +76,8 @@ const About = () => {
           </Col>
         </Row>
       </Container>
+
+      {/* </div> */}
     </section>
   );
 };
