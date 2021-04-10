@@ -29,7 +29,6 @@ const Projects = () => {
           <Title title="Projects" />
           {projects.map((project) => {
             const { title, info, info2, url, repo, img, id } = project;
-
             return (
               <Row key={id}>
                 <Col lg={4} sm={12}>
