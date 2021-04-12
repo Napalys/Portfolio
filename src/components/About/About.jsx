@@ -6,6 +6,7 @@ import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
 import '../../external/customScrolling';
+import Skill from '../Skill';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -25,7 +26,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" style={{ display: 'grid' }}>
+    <section id="about" style={{ display: 'grid', height: '100vh' }}>
       {/* <StaticImage */}
       {/*  style={{ gridArea: '1/1' }} */}
       {/*  layout="fullWidth" */}
@@ -38,14 +39,14 @@ const About = () => {
       <Container>
         <Title title="About Me" />
         <Row className="about-wrapper">
-          <Col md={6} sm={12}>
+          <Col lg={4} md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
               <div className="about-wrapper__image">
                 <AboutImg alt="profile picture" filename={img} />
               </div>
             </Fade>
           </Col>
-          <Col md={6} sm={12}>
+          <Col lg={4} md={6} sm={12}>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
@@ -73,6 +74,10 @@ const About = () => {
                 )}
               </div>
             </Fade>
+          </Col>
+          <Col lg={4} md={12} sm={12}>
+            <Skill total={10} amount={9} color='#f34b7d' colorNot='#ffffff00' text={'C++'}/>
+            <Skill total={10} amount={8} color='#b07219' colorNot='#00ff00' text={'Java'}/>
           </Col>
         </Row>
       </Container>

@@ -1,8 +1,17 @@
+.sproject{
+  width:1000px;
+  display: inline-table;
+}
 #projects {
   background-color: $white-color;
   color: $dark-blue-text;
-  margin-top: -15rem;
-  padding-top: 15rem;
+  //margin-top: -15rem;
+  //padding-top: 15rem;
+  width : 100%;
+  height: 100%;
+  min-height: 100vh;
+  height: 100vh;
+
 
   @include respond(tab-land) {
     margin-top: 0;
@@ -10,7 +19,8 @@
   }
 
   .project-wrapper {
-    margin-bottom: 15rem;
+    //margin-bottom: 15rem;
+
 
     @include respond(phone) {
       margin-bottom: 0rem;
@@ -50,7 +60,7 @@
     }
 
     &__image {
-      width: 90%;
+      width: 50%;
       margin: 0 auto;
 
       @include respond(tab-land) {
@@ -73,5 +83,72 @@
         }
       }
     }
+  }
+}
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+  height: auto;
+  width: 35%;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: pre-line;
+}
+
+.columnBottom {
+  //position:absolute;
+  //width: inherit;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: pre-line;
+  //float: left;
+  vertical-align : bottom;
+  //border : 1px solid gray;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.photobanner {
+  position:absolute;
+  /*top:0px;*/
+  left:0px;
+  overflow:hidden;
+  white-space: nowrap;
+  animation: bannermove 5s linear infinite;
+  height: 500px;
+  width: auto;
+}
+
+.photobanner .sproject {
+  margin: 0 0.5em
+}
+.photobanner .sproject {
+  transition: all 0.5s ease;
+}
+
+.photobanner:hover {
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused;
+}
+
+@keyframes bannermove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, 0);
   }
 }
