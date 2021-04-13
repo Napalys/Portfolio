@@ -7,6 +7,11 @@ import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
 import '../../external/customScrolling';
 import Skill from '../Skill';
+import javaLogo from '../../images/logos/java.png';
+import cSharpLogo from '../../images/logos/cSharp.png';
+import sqlLogo from '../../images/logos/sql.png';
+import cppLogo from '../../images/logos/cpp.png';
+import rustLogo from '../../images/logos/rust.png';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -38,6 +43,8 @@ const About = () => {
       {/* <div style={{ gridArea: '1/1', position: 'relative', placeItems: 'center', display: 'grid' }}> */}
       <Container>
         <Title title="About Me" />
+
+
         <Row className="about-wrapper">
           <Col lg={4} md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
@@ -75,9 +82,26 @@ const About = () => {
               </div>
             </Fade>
           </Col>
+
           <Col lg={4} md={12} sm={12}>
-            <Skill total={10} amount={9} color='#f34b7d' colorNot='#ffffff00' text={'C++'}/>
-            <Skill total={10} amount={8} color='#b07219' colorNot='#00ff00' text={'Java'}/>
+            {/*<img src='https://i.pinimg.com/736x/a2/dc/32/a2dc3249364449a49f01a6275d277b8c.jpg' alt=""> </img>*/}
+            {/*<img*/}
+            {/*  id="2"*/}
+            {/*  className="column"*/}
+            {/*  src="https://www.freeiconspng.com/uploads/c--logo-icon-0.png"*/}
+            {/*  alt=""*/}
+            {/*  style={{ float: 'right', width: '64%' }}*/}
+            {/*/>    */}
+            <img src={javaLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
+            <img src={cSharpLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
+            <img src={cppLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
+            <img src={rustLogo} alt="" style={{ float: 'right', width: '35%', padding: '10px'}}/>
+            <img src={sqlLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
+
+            {/*<Skill total={10} amount={9} color='#f34b7d' colorNot='#ffffff00' text={'C++'}/>*/}
+            {/*<Skill total={10} amount={8} color='#b07219' colorNot='#00ff00' text={'Java'}/>*/}
+            {/*<Skill total={10} amount={8} color='#178600' colorNot='#00ff00' text={'C#'}/>*/}
+            {/*<Skill total={10} amount={8} color='#dad8d8' colorNot='#00ff00' text={'SQL'}/>*/}
           </Col>
         </Row>
       </Container>

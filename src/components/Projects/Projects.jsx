@@ -39,14 +39,15 @@ const Projects = () => {
 
           <Carousel
             showArrows
-            width="1500px"
-            // dynamicHeight
-            autoPlay
-            infiniteLoop
-            showStatus
+            width="1000px"
+            animationHandler={'fade'}
+            autoPlay = {true}
+            infiniteLoop= {true}
+            showStatus = {false}
             showIndicators
             showThumbs
             swipeable
+
           >
             <div className="sproject">
               <h3 className="project-wrapper__text-title">Project Title</h3>
