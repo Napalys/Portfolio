@@ -83,7 +83,7 @@ const About = () => {
             </Fade>
           </Col>
 
-          <Col lg={4} md={12} sm={12}>
+          <Col lg={12} md={12} sm={12}>
             {/*<img src='https://i.pinimg.com/736x/a2/dc/32/a2dc3249364449a49f01a6275d277b8c.jpg' alt=""> </img>*/}
             {/*<img*/}
             {/*  id="2"*/}
@@ -92,11 +92,11 @@ const About = () => {
             {/*  alt=""*/}
             {/*  style={{ float: 'right', width: '64%' }}*/}
             {/*/>    */}
-            <img src={javaLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
-            <img src={cSharpLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
-            <img src={cppLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
-            <img src={rustLogo} alt="" style={{ float: 'right', width: '35%', padding: '10px'}}/>
-            <img src={sqlLogo} alt="" style={{  float: 'right', width: '35%', padding: '10px'}}/>
+            <img src={javaLogo} alt="" style={{width: '12%', padding: '10px'}}/>
+            <img src={cSharpLogo} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={cppLogo} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={rustLogo} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={sqlLogo} alt="" style={{width: '15%', padding: '10px'}}/>
 
             {/*<Skill total={10} amount={9} color='#f34b7d' colorNot='#ffffff00' text={'C++'}/>*/}
             {/*<Skill total={10} amount={8} color='#b07219' colorNot='#00ff00' text={'Java'}/>*/}
