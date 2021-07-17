@@ -96,11 +96,11 @@ class About extends React.Component {
             {/*  alt=""*/}
             {/*  style={{ float: 'right', width: '64%' }}*/}
             {/*/>    */}
-            <img src={javaLogo} alt="" style={{width: '12%', padding: '10px'}}/>
-            <img src={cSharpLogo} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={cppLogo} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={rustLogo} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={sqlLogo} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={javaLogo} className={"neonButton"} alt="" style={{width: '12%', padding: '10px'}}/>
+            <img src={cSharpLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={cppLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={rustLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={sqlLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
             {/*<div id="bodycontainer">*/}
             {/*  <div id="logo">*/}
             {/*    <img width="250" height="231" src="http://www.gameark.com/templates/onarcade/images/logo.png" onMouseEnter={moveLogo} />*/}

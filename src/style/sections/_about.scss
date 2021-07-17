@@ -138,4 +138,21 @@ body{background-color:#1A1919;text-align:center;}
 .noGrid .tile:after{
   content:none;
 }
-
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+.neonButton:hover {
+  font-size: 4rem;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-neon);
+  //border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  //-webkit-box-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  //box-shadow: 0px 0px 5px #fff;
+  //box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  -webkit-filter: drop-shadow(1px 1px 7px var(--clr-neon));
+  position: relative;
+}
