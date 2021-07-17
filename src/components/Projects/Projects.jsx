@@ -44,9 +44,9 @@ const Projects = () => {
             autoPlay = {true}
             infiniteLoop= {true}
             showStatus = {false}
-            showIndicators
-            showThumbs
-            swipeable
+            showIndicators = {false}
+            showThumbs = {false}
+            swipeable = {true}
 
           >
             <div className="sproject">
