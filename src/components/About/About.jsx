@@ -58,13 +58,13 @@ class About extends React.Component {
       {/* <div style={{ gridArea: '1/1', position: 'relative', placeItems: 'center', display: 'grid' }}> */}
       <Container>
         <Title title="About Me" />
-        <Row className="about-wrapper">
-          <Col lg={4} md={6} sm={12}>
+        <Row >
+          <Col >
             <Fade bottom duration={1000} delay={600} distance="30px">
-              <img src={portfolioPhoto} alt="" style={{width: '100%', padding: '10px'}}/>
+              <img src={portfolioPhoto} alt="" style={{width: '80%', padding: '10px'}}/>
             </Fade>
           </Col>
-          <Col lg={4} md={6} sm={12}>
+          <Col>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
@@ -86,33 +86,24 @@ class About extends React.Component {
               </div>
             </Fade>
           </Col>
+        </Row>
 
-          <Col lg={12} md={12} sm={12}>
-            {/*<img src='https://i.pinimg.com/736x/a2/dc/32/a2dc3249364449a49f01a6275d277b8c.jpg' alt=""> </img>*/}
-            {/*<img*/}
-            {/*  id="2"*/}
-            {/*  className="column"*/}
-            {/*  src="https://www.freeiconspng.com/uploads/c--logo-icon-0.png"*/}
-            {/*  alt=""*/}
-            {/*  style={{ float: 'right', width: '64%' }}*/}
-            {/*/>    */}
-            <img src={javaLogo} className={"neonButton"} alt="" style={{width: '12%', padding: '10px'}}/>
-            <img src={cSharpLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={cppLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={rustLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
-            <img src={sqlLogo} className={"neonButton"} alt="" style={{width: '15%', padding: '10px'}}/>
-            {/*<div id="bodycontainer">*/}
-            {/*  <div id="logo">*/}
-            {/*    <img width="250" height="231" src="http://www.gameark.com/templates/onarcade/images/logo.png" onMouseEnter={moveLogo} />*/}
-            {/*  </div>*/}
-
+          <Row alt="" >
+            <div style={{justifycontent:"center"}}>
+            <img src={javaLogo} className={"neonIcon neonIconJava"} alt="" style={{width: '12%', padding: '10px'}}/>
+            <img src={cSharpLogo} className={"neonIcon neonIconCsharp"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={cppLogo} className={"neonIcon neonIconCpp"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={rustLogo} className={"neonIcon neonIconRust"} alt="" style={{width: '15%', padding: '10px'}}/>
+            <img src={sqlLogo} className={"neonIcon neonIconSql"} alt="" style={{width: '15%', padding: '10px'}}/>
             {/*</div>*/}
             {/*<Skill total={10} amount={9} color='#f34b7d' colorNot='#ffffff00' text={'C++'}/>*/}
             {/*<Skill total={10} amount={8} color='#b07219' colorNot='#00ff00' text={'Java'}/>*/}
             {/*<Skill total={10} amount={8} color='#178600' colorNot='#00ff00' text={'C#'}/>*/}
             {/*<Skill total={10} amount={8} color='#dad8d8' colorNot='#00ff00' text={'SQL'}/>*/}
-          </Col>
-        </Row>
+            </div>
+          </Row>
+
+
       </Container>
 
       {/* </div> */}
