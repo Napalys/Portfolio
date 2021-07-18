@@ -142,17 +142,31 @@ body{background-color:#1A1919;text-align:center;}
   --clr-neon: hsl(317 100% 54%);
   --clr-bg: hsl(323 21% 16%);
 }
-.neonButton:hover {
+.neonIcon {
   font-size: 4rem;
   display: inline-block;
   text-decoration: none;
   color: var(--clr-neon);
-  //border: var(--clr-neon) 0.125em solid;
   padding: 0.25em 1em;
   border-radius: 0.25em;
-  //-webkit-box-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-  //box-shadow: 0px 0px 5px #fff;
-  //box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-  -webkit-filter: drop-shadow(1px 1px 7px var(--clr-neon));
   position: relative;
+}
+.neonIconCpp {
+  -webkit-filter: drop-shadow(1px 1px 3px #f34b7d);
+}
+
+.neonIconCsharp {
+  -webkit-filter: drop-shadow(1px 1px 3px #178600);
+}
+
+.neonIconJava {
+  -webkit-filter: drop-shadow(1px 1px 3px #b07219);
+}
+
+.neonIconSql {
+  -webkit-filter: drop-shadow(1px 1px 3px #dad8d8);
+}
+
+.neonIconRust {
+  -webkit-filter: drop-shadow(1px 1px 3px #dea584);
 }
