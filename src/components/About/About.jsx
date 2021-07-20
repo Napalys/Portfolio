@@ -46,7 +46,25 @@ class About extends React.Component {
   const { isDesktop, isMobile } = this.state;
 
   return (
-    <section id="about" style={{ display: 'grid', height: '100vh' }}>
+    <div className="hero-container" style={{ display: 'grid' }}>
+      <div
+        style={{
+          gridArea: '1/1',
+          width: '100%',
+          height: '100%',
+          backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
+          backgroundSize: 'cover',
+        }}
+      />
+    <section id="about"
+             style={{
+               gridArea: '1/1',
+               zIndex: 2000,
+               position: 'relative',
+               placeItems: 'center',
+               display: 'grid',
+             }}>
+
       {/* <StaticImage */}
       {/*  style={{ gridArea: '1/1' }} */}
       {/*  layout="fullWidth" */}
@@ -61,7 +79,7 @@ class About extends React.Component {
         <Row >
           <Col >
             <Fade bottom duration={1000} delay={600} distance="30px">
-              <img src={portfolioPhoto} alt="" style={{width: '80%', padding: '10px'}}/>
+              <img src={portfolioPhoto} alt="" style={{width: '65%', padding: '10px'}}/>
             </Fade>
           </Col>
           <Col>
@@ -108,6 +126,7 @@ class About extends React.Component {
 
       {/* </div> */}
     </section>
+    </div>
   );
 }
 }
