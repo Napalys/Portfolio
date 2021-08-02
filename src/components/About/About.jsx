@@ -56,6 +56,7 @@ class About extends React.Component {
           backgroundSize: 'cover',
         }}
       />
+
     <section id="about"
              style={{
                gridArea: '1/1',
@@ -77,9 +78,9 @@ class About extends React.Component {
       <Container>
         <Title title="About Me" />
         <Row >
-          <Col >
+          <Col>
             <Fade bottom duration={1000} delay={600} distance="30px">
-              <img src={portfolioPhoto} alt="" style={{width: '65%', padding: '10px'}}/>
+              <img src={portfolioPhoto} alt="" style={{width: '80%', padding: '10px'}}/>
             </Fade>
           </Col>
           <Col>
