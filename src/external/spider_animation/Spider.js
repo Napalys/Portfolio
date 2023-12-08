@@ -1,6 +1,9 @@
-import { Circ, TweenLite } from 'gsap';
+import { gsap } from 'gsap';
+import Circle from './Circle';
 
-export function animateIndexPage() {
+const getDistance = (p1, p2) => (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2;
+
+export default function animateIndexPage() {
   let width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
   // Main
@@ -11,10 +14,10 @@ export function animateIndexPage() {
   function initHeader() {
     width = window.innerWidth;
     height = window.innerHeight;
-    target = {x: width / 2, y: height / 2};
+    target = { x: width / 2, y: height / 2 };
 
     largeHeader = document.getElementById('hero');
-    largeHeader.style.height = height + 'px';
+    largeHeader.style.height = `${height}px`;
 
     canvas = document.getElementById('demo-canvas');
     canvas.width = width;
@@ -23,15 +26,15 @@ export function animateIndexPage() {
 
     // create points
     points = [];
-    for (let x = 0; x < width; x = x + width / 20) {
-      for (let y = 0; y < height; y = y + height / 20) {
-        const px = x + Math.random() * width / 20;
-        const py = y + Math.random() * height / 20;
-        const p = {x: px, originX: px, y: py, originY: py};
+    for (let x = 0; x < width; x += width / 20) {
+      for (let y = 0; y < height; y += height / 20) {
+        const px = x + (Math.random() * width) / 20;
+        const py = y + (Math.random() * height) / 20;
+        const p = { x: px, originX: px, y: py, originY: py };
         points.push(p);
       }
     }
-
+    /* eslint-disable no-plusplus */
     // for each point find the 5 closest points
     for (let i = 0; i < points.length; i++) {
       const closest = [];
@@ -63,7 +66,7 @@ export function animateIndexPage() {
     }
 
     // assign a circle to each point
-    for (let i in points)
+    for (const i in points)
       points[i].circle = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
   }
 
@@ -96,7 +99,7 @@ export function animateIndexPage() {
   function resize() {
     width = window.innerWidth;
     height = window.innerHeight;
-    largeHeader.style.height = height + 'px';
+    largeHeader.style.height = `${height}px`;
     canvas.width = width;
     canvas.height = height;
   }
@@ -129,19 +132,21 @@ export function animateIndexPage() {
         }
 
         drawLines(points[i]);
-        points[i].circle.draw();
+        points[i].circle.draw(ctx);
       }
     }
     requestAnimationFrame(animate);
   }
 
   function shiftPoint(p) {
-    TweenLite.to(p, 1 + Math.random(), {
+    gsap.to(p, {
+      duration: 1 + Math.random(),
       x: p.originX - 50 + Math.random() * 100,
-      y: p.originY - 50 + Math.random() * 100, ease: Circ.easeInOut,
-      onComplete: function () {
+      y: p.originY - 50 + Math.random() * 100,
+      ease: 'circ.inOut',
+      onComplete() {
         shiftPoint(p);
-      }
+      },
     });
   }
 
@@ -156,29 +161,4 @@ export function animateIndexPage() {
       ctx.stroke();
     }
   }
-
-  function Circle(pos, rad, color) {
-    const _this = this;
-
-    // constructor
-    (function () {
-      _this.pos = pos || null;
-      _this.radius = rad || null;
-      _this.color = color || null;
-    })();
-
-    this.draw = function () {
-      if (!_this.active) return;
-      ctx.beginPath();
-      ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')';
-      ctx.fill();
-    };
-  }
-
-  // Util
-  function getDistance(p1, p2) {
-    return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
-  }
-
 }
