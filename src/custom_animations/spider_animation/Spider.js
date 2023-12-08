@@ -1,7 +1,5 @@
 import Point from './Point';
 
-const getDistance = (p1, p2) => (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2;
-
 export default function animateIndexPage() {
   let width = window.innerWidth;
   let height = window.innerHeight;
@@ -75,8 +73,7 @@ export default function animateIndexPage() {
     if (animateHeader) {
       ctx.clearRect(0, 0, width, height);
       points.forEach((point) => {
-        const distance = Math.abs(getDistance(target, point));
-        point.updateActiveStatus(distance);
+        point.updateActiveStatus(target);
         drawLines(point);
         point.circle.draw(ctx);
       });
