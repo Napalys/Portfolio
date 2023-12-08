@@ -1,20 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
-import AboutImg from '../Image/AboutImg';
-import PortfolioContext from '../../context/context';
+// import AboutImg from '../Image/AboutImg';
+// import PortfolioContext from '../../context/context';
 import '../../external/customScrolling';
-import Skill from '../Skill';
+// import Skill from '../Skill';
 import javaLogo from '../../images/logos/java.png';
 import portfolioPhoto from '../../images/portfolioPhoto.png';
 import cSharpLogo from '../../images/logos/cSharp.png';
 import sqlLogo from '../../images/logos/sql.png';
 import cppLogo from '../../images/logos/cpp.png';
 import rustLogo from '../../images/logos/rust.png';
-import moveLogo from './InfuseLogo';
-import initTileAnimation from './tileAnimation';
+// import moveLogo from './InfuseLogo';
+// import initTileAnimation from './tileAnimation';
 
 class About extends React.Component {
 
@@ -40,7 +40,7 @@ class About extends React.Component {
   // const { about } = useContext(PortfolioContext);
   // const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
   const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = {
-    img:"", paragraphOne:"", paragraphTwo:"", paragraphThree:"", paragraphThree: ""
+    img:"", paragraphOne:"", paragraphTwo:"", paragraphThree:""
   };
 
   const { isDesktop, isMobile } = this.state;
