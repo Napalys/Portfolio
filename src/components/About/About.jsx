@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 // import AboutImg from '../Image/AboutImg';
 // import PortfolioContext from '../../context/context';
-import '../../external/customScrolling';
+import '../../custom_animations/customScrolling';
 // import Skill from '../Skill';
 import javaLogo from '../../images/logos/java.png';
 import portfolioPhoto from '../../images/portfolioPhoto.png';
