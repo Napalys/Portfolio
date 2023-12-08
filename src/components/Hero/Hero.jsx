@@ -2,10 +2,10 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
-import animateIndexPage from '../../external/spider_animation/Spider';
+import animateIndexPage from '../../custom_animations/spider_animation/Spider';
 
-const { heroBtnClicked } = require(`../../external/customScrolling`);
-const { menuBtnClicked } = require(`../../external/customScrolling`);
+const { heroBtnClicked } = require(`../../custom_animations/customScrolling`);
+const { menuBtnClicked } = require(`../../custom_animations/customScrolling`);
 
 class Header extends React.Component {
   constructor(props) {
