@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 // import AboutImg from '../Image/AboutImg';
 // import PortfolioContext from '../../context/context';
-import '../../custom_animations/customScrolling';
 // import Skill from '../Skill';
 import javaLogo from '../../images/logos/java.png';
 import portfolioPhoto from '../../images/portfolioPhoto.png';
@@ -17,7 +16,6 @@ import rustLogo from '../../images/logos/rust.png';
 // import initTileAnimation from './tileAnimation';
 
 class About extends React.Component {
-
   constructor(props) {
     super(props);
     if (window.innerWidth > 769) {

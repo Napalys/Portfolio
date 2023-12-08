@@ -4,8 +4,10 @@ import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import animateIndexPage from '../../custom_animations/spider_animation/Spider';
 
-const { heroBtnClicked } = require(`../../custom_animations/customScrolling`);
-const { menuBtnClicked } = require(`../../custom_animations/customScrolling`);
+const {
+  heroBtnClicked,
+  menuBtnClicked,
+} = require(`../../custom_animations/custom_scrolling/customScrolling`);
 
 class Header extends React.Component {
   constructor(props) {
@@ -31,7 +33,7 @@ class Header extends React.Component {
     const { title, name, subtitle, cta } = {
       title: 'Hi, my name is',
       name: 'Napalys Klicius',
-      subtitle: "I'm the Software Developer you've been looking for.",
+      subtitle: "I'm the Software Engineer you've been looking for.",
       cta: "Let's talk ?",
     };
     const { isDesktop, isMobile } = this.state;
