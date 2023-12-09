@@ -1,19 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
-// import { StaticImage } from 'gatsby-plugin-image';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
-// import AboutImg from '../Image/AboutImg';
-// import PortfolioContext from '../../context/context';
-// import Skill from '../Skill';
 import javaLogo from '../../images/logos/java.png';
 import portfolioPhoto from '../../images/portfolioPhoto.png';
 import cSharpLogo from '../../images/logos/cSharp.png';
 import sqlLogo from '../../images/logos/sql.png';
 import cppLogo from '../../images/logos/cpp.png';
 import rustLogo from '../../images/logos/rust.png';
-// import moveLogo from './InfuseLogo';
-// import initTileAnimation from './tileAnimation';
+import { motion } from 'framer-motion';
 
 class About extends React.Component {
   constructor(props) {
@@ -42,6 +36,19 @@ class About extends React.Component {
   };
 
   const { isDesktop, isMobile } = this.state;
+    const desktopVariants = {
+      hidden: { opacity: 0, x: -30 },
+      visible: { opacity: 1, x: 0 },
+    };
+
+    // Variants for mobile (bottom fade)
+    const mobileVariants = {
+      hidden: { opacity: 0, y: 30 },
+      visible: { opacity: 1, y: 0 },
+    };
+
+    // Choose the appropriate variants based on the device
+    const variants = isDesktop ? desktopVariants : (isMobile ? mobileVariants : desktopVariants);
 
   return (
     <div className="hero-container" style={{ display: 'grid' }}>
@@ -77,17 +84,27 @@ class About extends React.Component {
         <Title title="About Me" />
         <Row >
           <Col>
-            <Fade bottom duration={1000} delay={600} distance="30px">
-              <img src={portfolioPhoto} alt="" style={{width: '80%', padding: '10px'}}/>
-            </Fade>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1, delay: 0.5 }}
+              variants={variants}
+            >
+              <img src={portfolioPhoto} alt="" style={{ width: '80%', padding: '10px' }} />
+            </motion.div>
           </Col>
           <Col>
-            <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1, delay: 0.5 }}
+              variants={variants}
+            >
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
                   {paragraphOne ||
                     'I\'m a passionate software developer with a master’s degree in computer science. I’m most comfortable in object-oriented programming, however, I’m not limited to this domain alone – I am well familiar with other software paradigms, such as logical or functional programming, which gives me an encompassing understanding and a variety of approaches to solve software-related problems. In the past, I have been working along the entire development cycle, from coding and testing to documentation and support. Moreover, my practical experience covers the whole range from developing simple APIs or databases to well-tested large-scale systems. In my free time, I also like to write software that helps me streamline my digital activities by automating repetitive actions. I’m a challenge seeker – which is probably why problem cracking is the part of software development that excites me the most.'}
-                  </p>
+                </p>
                 {resume && (
                   <span className="d-flex mt-3">
                     <a
@@ -101,12 +118,12 @@ class About extends React.Component {
                   </span>
                 )}
               </div>
-            </Fade>
+            </motion.div>
           </Col>
         </Row>
 
-          <Row alt="" >
-            <div style={{justifycontent:"center"}}>
+        <Row alt="">
+          <div style={{ justifycontent: 'center' }}>
             <img src={javaLogo} className={"neonIcon neonIconJava"} alt="" style={{width: '12%', padding: '10px'}}/>
             <img src={cSharpLogo} className={"neonIcon neonIconCsharp"} alt="" style={{width: '15%', padding: '10px'}}/>
             <img src={cppLogo} className={"neonIcon neonIconCpp"} alt="" style={{width: '15%', padding: '10px'}}/>
