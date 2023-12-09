@@ -1,18 +1,29 @@
 import React, { useContext } from 'react';
-import Fade from 'react-reveal/Fade';
 import { Container } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const { contact } = useContext(PortfolioContext);
   const { cta, btn, email } = contact;
 
+  // Animation settings
+  const fadeVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section id="contact">
       <Container>
         <Title title="Contact" />
-        <Fade bottom duration={1000} delay={800} distance="30px">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1, delay: 0.8 }}
+          variants={fadeVariants}
+        >
           <div className="contact-wrapper">
             <p className="contact-wrapper__text">
               {cta || 'Would you like to work with me? Awesome!'}
@@ -26,7 +37,7 @@ const Contact = () => {
               {btn || "Let's Talk"}
             </a>
           </div>
-        </Fade>
+        </motion.div>
       </Container>
     </section>
   );

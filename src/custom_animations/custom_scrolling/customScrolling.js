@@ -14,7 +14,7 @@ let scrollInAction = false;
     counter = Math.max(counter, 0);
     counter = Math.min(counter, sections.length - 1);
     buttons[counter].classList.add('onVisitSection');
-    sections[counter].scrollIntoView({ behavior: 'auto' }); // switch to smooth for animation
+    sections[counter].scrollIntoView({ behavior: 'instant' }); // switch to smooth for animation
     scrollInAction = true;
     setTimeout(() => {
       scrollInAction = false;

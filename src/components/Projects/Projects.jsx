@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
