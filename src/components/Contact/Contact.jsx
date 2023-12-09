@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
-import { motion } from 'framer-motion';
 
 const Contact = () => {
   const { contact } = useContext(PortfolioContext);
