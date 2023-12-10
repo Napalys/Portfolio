@@ -173,10 +173,23 @@ body{background-color:#1A1919;text-align:center;}
   padding: 0.25em 1em;
   border-radius: 0.25em;
   position: relative;
-}
-.neonIconCpp {
   -webkit-filter: drop-shadow(1px 1px 3px #f34b7d);
+  transition: all 0.3s ease;
 }
+
+.neonIcon:hover {
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    filter: drop-shadow(1px 1px 3px #b07219) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(1px 1px 10px #b07219) brightness(1.5);
+  }
+}
+
 
 .neonIconCsharp {
   -webkit-filter: drop-shadow(1px 1px 3px #178600);
