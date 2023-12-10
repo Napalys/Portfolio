@@ -91,7 +91,7 @@ class Header extends React.Component {
                 .
                 <br />
                 {"I'm the "}
-                <span className="text-color-main">Software Developer</span>
+                <span className="text-color-main">Software Engineer</span>
                 {" you've been looking for."}
               </h1>
             </motion.div>

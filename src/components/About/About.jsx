@@ -1,13 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Title from '../Title/Title';
-import javaLogo from '../../images/logos/java.png';
-import portfolioPhoto from '../../images/portfolioPhoto.png';
-import cSharpLogo from '../../images/logos/cSharp.png';
-import sqlLogo from '../../images/logos/sql.png';
-import cppLogo from '../../images/logos/cpp.png';
-import rustLogo from '../../images/logos/rust.png';
+import './_sphere.css';
+import initializeFrameworkSphere from '../../custom_animations/sphere/FrameworkSphere';
 
 class About extends React.Component {
   constructor(props) {
@@ -26,15 +22,20 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-    // initTileAnimation();
+    initializeFrameworkSphere();
   }
 
   render() {
     // const { about } = useContext(PortfolioContext);
     // const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
-    const { paragraphOne, resume } = {
+    const { paragraphOne, paragraphTwo, paragraphThree, resume, linkedIn } = {
       paragraphOne:
-        "I'm a passionate software developer with a master’s degree in computer science. I’m most comfortable in object-oriented programming, however, I’m not limited to this domain alone – I am well familiar with other software paradigms, such as logical or functional programming, which gives me an encompassing understanding and a variety of approaches to solve software-related problems. In the past, I have been working along the entire development cycle, from coding and testing to documentation and support. Moreover, my practical experience covers the whole range from developing simple APIs or databases to well-tested large-scale systems. In my free time, I also like to write software that helps me streamline my digital activities by automating repetitive actions. I’m a challenge seeker – which is probably why problem cracking is the part of software development that excites me the most.",
+        "Hello there! I'm Napalys Kličius, a passionate software developer with a master's degree in Computer Science. I thrive on being a Problem Solver, armed with a diverse skill set that extends from object-oriented programming to logical and functional paradigms. ",
+      paragraphTwo: 'Intrigued? If you want to know more about me checkout my LinkedIn or GitHub!',
+      paragraphThree:
+        'On the left side one may see the technologies I have the most experience with. Fun fact about me, my favorite programming language is C++.',
+      resume: 'https://github.com/Napalys',
+      linkedIn: 'https://www.linkedin.com/in/napalys-klicius/',
     };
 
     const { isDesktop, isMobile } = this.state;
@@ -54,7 +55,10 @@ class About extends React.Component {
     const variants = isDesktop ? desktopVariants : isMobile ? mobileVariants : desktopVariants;
 
     return (
-      <div className="hero-container" style={{ display: 'grid', zIndex: 0 }}>
+      <div
+        className="hero-container"
+        style={{ display: 'grid', gridTemplateRows: 'auto 1fr', zIndex: 0 }}
+      >
         <div
           style={{
             gridArea: '1/1',
@@ -77,19 +81,19 @@ class About extends React.Component {
           }}
         >
           <Container>
-            <Title title="About Me" />
-            <Row>
-              <Col>
+            <Title title="About Me" style={{ gridRow: 1, gridColumn: '1/-1' }} />
+            <Row style={{ gridRow: 2 }}>
+              <Col style={{ gridColumn: 2 }}>
                 <motion.div
                   initial="hidden"
                   animate="visible"
                   transition={{ duration: 1, delay: 0.5 }}
                   variants={variants}
                 >
-                  <img src={portfolioPhoto} alt="" style={{ width: '80%', padding: '10px' }} />
+                  <span className="Sphere" />
                 </motion.div>
               </Col>
-              <Col>
+              <Col style={{ gridColumn: 1 }}>
                 <motion.div
                   initial="hidden"
                   animate="visible"
@@ -98,6 +102,8 @@ class About extends React.Component {
                 >
                   <div className="about-wrapper__info">
                     <p className="about-wrapper__info-text">{paragraphOne}</p>
+                    <p className="about-wrapper__info-text">{paragraphThree}</p>
+                    <p className="about-wrapper__info-text">{paragraphTwo}</p>
                     {resume && (
                       <span className="d-flex mt-3">
                         <a
@@ -106,7 +112,15 @@ class About extends React.Component {
                           className="cta-btn cta-btn--resume"
                           href={resume}
                         >
-                          Resume
+                          Github
+                        </a>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cta-btn cta-btn--resume"
+                          href={linkedIn}
+                        >
+                          LinkedIn
                         </a>
                       </span>
                     )}
@@ -114,40 +128,8 @@ class About extends React.Component {
                 </motion.div>
               </Col>
             </Row>
-
             <Row alt="">
-              <div style={{ justifycontent: 'center' }}>
-                <img
-                  src={javaLogo}
-                  className="neonIcon neonIconJava"
-                  alt=""
-                  style={{ width: '12%', padding: '10px' }}
-                />
-                <img
-                  src={cSharpLogo}
-                  className="neonIcon neonIconCsharp"
-                  alt=""
-                  style={{ width: '15%', padding: '10px' }}
-                />
-                <img
-                  src={cppLogo}
-                  className="neonIcon neonIconCpp"
-                  alt=""
-                  style={{ width: '15%', padding: '10px' }}
-                />
-                <img
-                  src={rustLogo}
-                  className="neonIcon neonIconRust"
-                  alt=""
-                  style={{ width: '15%', padding: '10px' }}
-                />
-                <img
-                  src={sqlLogo}
-                  className="neonIcon neonIconSql"
-                  alt=""
-                  style={{ width: '15%', padding: '10px' }}
-                />
-              </div>
+              <div style={{ justifycontent: 'center' }} />
             </Row>
           </Container>
         </section>

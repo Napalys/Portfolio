@@ -16,7 +16,7 @@ const projects = [
     imageUrl:
       'https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif',
     liveUrl: '#!',
-    sourceUrl: '#!',
+    sourceUrl: 'https://github.com/Napalys/FirstPersonShooter',
   },
   {
     title: 'Project Title',
