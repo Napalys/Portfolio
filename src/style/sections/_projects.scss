@@ -1,29 +1,24 @@
-.sproject{
-  width:1000px;
-  display: inline-table;
-}
 #projects {
   background-color: $white-color;
   color: $dark-blue-text;
-  //margin-top: -15rem;
-  //padding-top: 15rem;
-  width : 100%;
+  width: 100%;
   height: 100%;
   min-height: 100vh;
-  height: 100vh;
-
 
   @include respond(tab-land) {
-    margin-top: 0;
     padding-top: 5rem;
   }
 
   .project-wrapper {
-    //margin-bottom: 15rem;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centers children horizontally
+    justify-content: center; // Centers children vertically
+    width: 100%; // Takes full width of the parent
+    margin: auto; // Center the wrapper in the parent
 
     @include respond(phone) {
-      margin-bottom: 0rem;
+      margin-bottom: 0;
     }
 
     .row {
@@ -33,115 +28,92 @@
         margin-bottom: 4rem;
       }
     }
+  }
+}
+.project-image {
+  max-width: 60%; /* Image can grow up to 100% of its container's width */
+  min-width: 60%;
+  min-height: 60%;
+  height: 100%;   /* Height adjusts automatically to maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the set width/height area */
+  border-radius: 15px; /* Optional, for styling */
+}
 
-    &__text {
-      text-align: left;
 
-      @include respond(phone) {
-        margin-bottom: 2.5rem !important;
-      }
-      @include respond(tab-land) {
-        margin-bottom: 4.8rem;
-      }
 
-      &-title {
-        font-weight: bold;
-        margin-bottom: 1.8rem;
-        font-size: $mid-font-size;
-
-        @include respond(phone) {
-          font-size: 2rem;
-        }
-      }
-
-      & p > a {
-        color: $secondary-color;
-      }
-    }
-
-    &__image {
-      width: 50%;
-      margin: 0 auto;
-
-      @include respond(tab-land) {
-        width: 100%;
-        margin: 0;
-      }
-
-      & .thumbnail {
-        border: none;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        transition: all 0.2s ease-out;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-        transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.5s box-shadow,
-          0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-
-        @include respond(phone) {
-          border: 1px solid #d2d2d2;
-          box-shadow: none;
-          margin-bottom: 3.2rem;
-        }
-      }
-    }
+.sproject {
+  display: flex;
+  flex-direction: row; /* Adjust direction as needed */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  /* Other styles */
+}
+@media (min-width: 1024px) {
+  .project-image {
+    max-width: 800px; /* Larger size on big screens */
+  }
+  .sproject {
+    /* Adjust flexbox settings or width for larger screens if needed */
   }
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .project-image {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+  .sproject {
+    /* Adjust flexbox settings or width for smaller screens if needed */
+  }
+}
 
-/* Create two equal columns that floats next to each other */
-.column {
-  height: auto;
-  width: 35%;
+.project-text {
+  display: flex;
+  flex-direction: column;
+  width: 60%; // Adjust as needed
+  padding: 10px; // Add padding for spacing
+}
+
+.project-description {
   padding: 10px;
-  box-sizing: border-box;
-  white-space: pre-line;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.column {
+  width: 100%; // Full width within the flex container
+  padding: 10px;
 }
 
 .columnBottom {
-  //position:absolute;
-  //width: inherit;
-  padding: 10px;
-  box-sizing: border-box;
-  white-space: pre-line;
-  //float: left;
-  vertical-align : bottom;
-  //border : 1px solid gray;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.photobanner .sproject {
+  margin: 0 0.5em;
 }
 
 .photobanner {
-  position:absolute;
-  /*top:0px;*/
-  left:0px;
-  overflow:hidden;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
   white-space: nowrap;
   animation: bannermove 5s linear infinite;
   height: 500px;
   width: auto;
 }
 
-.photobanner .sproject {
-  margin: 0 0.5em
-}
-.photobanner .sproject {
-  transition: all 0.5s ease;
-}
-
 .photobanner:hover {
-  -webkit-animation-play-state:paused;
-  -moz-animation-play-state:paused;
-  -o-animation-play-state:paused;
-  animation-play-state:paused;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes bannermove {
@@ -152,3 +124,6 @@
     transform: translate(-50%, 0);
   }
 }
+
+/* Additional styles for other elements */
+/* You can add or adjust styles for other elements like headers, footers, etc. here */

@@ -1,12 +1,25 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
-const Title = ({ title }) => (
-  <Fade bottom duration={1000} delay={300} distance="0px">
-    <h2 className="section-title">{title}</h2>
-  </Fade>
-);
+const Title = ({ title }) => {
+  // Animation settings
+  const fadeVariants = {
+    hidden: { opacity: 0, y: 0 }, // Adjusted y value to 0 as per distance="0px"
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 1, delay: 0.3 }}
+      variants={fadeVariants}
+    >
+      <h2 className="section-title">{title}</h2>
+    </motion.div>
+  );
+};
 
 Title.propTypes = {
   title: PropTypes.string.isRequired,

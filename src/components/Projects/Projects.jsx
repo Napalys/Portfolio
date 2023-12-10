@@ -1,462 +1,115 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Tilt from 'react-tilt';
-import { Container, Row, Col } from 'react-bootstrap';
-import PortfolioContext from '../../context/context';
-import Title from '../Title/Title';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import React from 'react';
+import { Tilt } from 'react-tilt';
+import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
+import Title from '../Title/Title';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const Projects = () => {
-  const { projects } = useContext(PortfolioContext);
+const projects = [
+  // Add your projects here
+  {
+    title: 'FirstPersonShooter',
+    description:
+      "One of my old side projects during my bachelor, it's completely open-source and may act as guidance for someone who just starts developing. I would highly recommend taking a look first at the Blueprint system, before digging into C++ code.\n" +
+      '\n' +
+      'The code is compatible with the Unreal Engine 4.26 version',
+    imageUrl:
+      'https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif',
+    liveUrl: '#!',
+    sourceUrl: 'https://github.com/Napalys/FirstPersonShooter',
+  },
+  {
+    title: 'Project Title',
+    description: 'Lorem ipsum dolor sit...',
+    imageUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg',
+    liveUrl: '#!',
+    sourceUrl: '#!',
+  },
+  // More projects...
+];
+const tiltOptions = {
+  reverse: false,
+  max: 8,
+  perspective: 1000,
+  scale: 1,
+  speed: 300,
+  transition: true,
+  axis: null,
+  reset: true,
+  easing: 'cubic-bezier(.03,.98,.52,.99)',
+};
+const ProjectItem = ({ title, description, imageUrl, liveUrl, sourceUrl }) => (
+  <div className="sproject">
+    <Tilt options={tiltOptions}>
+      <div data-tilt="" className="thumbnail rounded">
+        <img className="project-image" src={imageUrl} alt="" />
+      </div>
+    </Tilt>
+    <div className="project-text">
+      <h3 className="project-wrapper__text-title">{title}</h3>
+      <div className="project-description">{description}</div>
+      <div className="project-buttons">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-btn cta-btn--hero"
+          href={liveUrl}
+        >
+          See Live
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-btn text-color-main"
+          href={sourceUrl}
+        >
+          Source Code
+        </a>
+      </div>
+    </div>
+  </div>
+);
 
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth > 769) {
-      setIsDesktop(true);
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-      setIsDesktop(false);
-    }
-  }, []);
-
-  return (
-    <section
-      id="projects"
-      style={{
-        gridArea: '1/1',
-        width: '100%',
-        height: '100%',
-        backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
-        backgroundSize: 'cover',
-      }}
-    >
-      <Container>
-        <div className="project-wrapper">
-          <Title title="Projects" />
-
-          <Carousel
-            showArrows
-            width="1000px"
-            animationHandler={'fade'}
-            autoPlay = {true}
-            infiniteLoop= {true}
-            showStatus = {false}
-            showIndicators
-            showThumbs
-            swipeable
-
-          >
-            <div className="sproject">
-              <h3 className="project-wrapper__text-title">Project Title</h3>
-              <div
-                className="column"
-                style={{ textAlign: 'justify', float: 'left', fontSize: 'medium' }}
-              >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa
-                animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur
-                blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-              </div>
-              <a
-                href={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg' || '#!'}
-                target="_blank"
-                aria-label="Project Link"
-                rel="noopener noreferrer"
-              >
-                <Tilt
-                  options={{
-                    reverse: false,
-                    max: 8,
-                    perspective: 1000,
-                    scale: 1,
-                    speed: 300,
-                    transition: true,
-                    axis: null,
-                    reset: true,
-                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                  }}
-                >
-                  <div data-tilt className="thumbnail rounded">
-                    <img
-                      id="2"
-                      className="column"
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg"
-                      alt=""
-                      style={{ float: 'right', width: '64%' }}
-                    />
-                  </div>
-                </Tilt>
-              </a>
-              <div className="columnBottom">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--hero"
-                  href="#!"
-                  style={{ float: 'left' }}
-                >
-                  See Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn text-color-main"
-                  style={{ float: 'left' }}
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div className="sproject">
-              <h3 className="project-wrapper__text-title">Project Title</h3>
-              <div
-                className="column"
-                style={{ textAlign: 'justify', float: 'left', fontSize: 'medium' }}
-              >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa
-                animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur
-                blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-              </div>
-              <a
-                href={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg' || '#!'}
-                target="_blank"
-                aria-label="Project Link"
-                rel="noopener noreferrer"
-              >
-                <Tilt
-                  options={{
-                    reverse: false,
-                    max: 8,
-                    perspective: 1000,
-                    scale: 1,
-                    speed: 300,
-                    transition: true,
-                    axis: null,
-                    reset: true,
-                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                  }}
-                >
-                  <div data-tilt className="thumbnail rounded">
-                    <img
-                      id="2"
-                      className="column"
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg"
-                      alt=""
-                      style={{ float: 'right', width: '64%' }}
-                    />
-                  </div>
-                </Tilt>
-              </a>
-              <div className="columnBottom">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--hero"
-                  href="#!"
-                  style={{ float: 'left' }}
-                >
-                  See Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn text-color-main"
-                  style={{ float: 'left' }}
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div className="sproject">
-              <h3 className="project-wrapper__text-title">Project Title</h3>
-              <div
-                className="column"
-                style={{ textAlign: 'justify', float: 'left', fontSize: 'medium' }}
-              >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa
-                animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur
-                blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-              </div>
-              <a
-                href={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg' || '#!'}
-                target="_blank"
-                aria-label="Project Link"
-                rel="noopener noreferrer"
-              >
-                <Tilt
-                  options={{
-                    reverse: false,
-                    max: 8,
-                    perspective: 1000,
-                    scale: 1,
-                    speed: 300,
-                    transition: true,
-                    axis: null,
-                    reset: true,
-                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                  }}
-                >
-                  <div data-tilt className="thumbnail rounded">
-                    <img
-                      id="2"
-                      className="column"
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg"
-                      alt=""
-                      style={{ float: 'right', width: '64%' }}
-                    />
-                  </div>
-                </Tilt>
-              </a>
-              <div className="columnBottom">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--hero"
-                  href="#!"
-                  style={{ float: 'left' }}
-                >
-                  See Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn text-color-main"
-                  style={{ float: 'left' }}
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div className="sproject">
-              <h3 className="project-wrapper__text-title">Project Title</h3>
-              <div
-                className="column"
-                style={{ textAlign: 'justify', float: 'left', fontSize: 'medium' }}
-              >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa
-                animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur
-                blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-              </div>
-              <a
-                href={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg' || '#!'}
-                target="_blank"
-                aria-label="Project Link"
-                rel="noopener noreferrer"
-              >
-                <Tilt
-                  options={{
-                    reverse: false,
-                    max: 8,
-                    perspective: 1000,
-                    scale: 1,
-                    speed: 300,
-                    transition: true,
-                    axis: null,
-                    reset: true,
-                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                  }}
-                >
-                  <div data-tilt className="thumbnail rounded">
-                    <img
-                      id="2"
-                      className="column"
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg"
-                      alt=""
-                      style={{ float: 'right', width: '64%' }}
-                    />
-                  </div>
-                </Tilt>
-              </a>
-              <div className="columnBottom">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--hero"
-                  href="#!"
-                  style={{ float: 'left' }}
-                >
-                  See Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn text-color-main"
-                  style={{ float: 'left' }}
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div className="sproject">
-              <h3 className="project-wrapper__text-title">Project Title</h3>
-              <div
-                className="column"
-                style={{ textAlign: 'justify', float: 'left', fontSize: 'medium' }}
-              >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa
-                animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur
-                blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.
-              </div>
-              <a
-                href={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg' || '#!'}
-                target="_blank"
-                aria-label="Project Link"
-                rel="noopener noreferrer"
-              >
-                <Tilt
-                  options={{
-                    reverse: false,
-                    max: 8,
-                    perspective: 1000,
-                    scale: 1,
-                    speed: 300,
-                    transition: true,
-                    axis: null,
-                    reset: true,
-                    easing: 'cubic-bezier(.03,.98,.52,.99)',
-                  }}
-                >
-                  <div data-tilt className="thumbnail rounded">
-                    <img
-                      id="2"
-                      className="column"
-                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg"
-                      alt=""
-                      style={{ float: 'right', width: '64%' }}
-                    />
-                  </div>
-                </Tilt>
-              </a>
-              <div className="columnBottom">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--hero"
-                  href="#!"
-                  style={{ float: 'left' }}
-                >
-                  See Live
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn text-color-main"
-                  style={{ float: 'left' }}
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-          </Carousel>
-        </div>
-      </Container>
-    </section>
-  );
+ProjectItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  liveUrl: PropTypes.string.isRequired,
+  sourceUrl: PropTypes.string.isRequired,
 };
 
+const carouselProps = {
+  showArrows: true,
+  // width: '100px',
+  autoPlay: true,
+  infiniteLoop: true,
+  showStatus: false,
+  showIndicators: false,
+  showThumbs: false,
+  swipeable: true,
+};
+
+const Projects = () => (
+  <section
+    id="projects"
+    style={{
+      gridArea: '1/1',
+      width: '100%',
+      height: '100%',
+      backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
+      backgroundSize: 'cover',
+      zIndex: 0,
+    }}
+  >
+    <div className="project-wrapper">
+      <Title title="Projects" />
+      <Carousel {...carouselProps}>
+        {projects.map((project) => (
+          <ProjectItem key={project.id} {...project} />
+        ))}
+      </Carousel>
+    </div>
+  </section>
+);
+
 export default Projects;
-
-{
-  /* <img id ='2' src="https://i.stack.imgur.com/CVgbr.jpg" alt=""/> */
-}
-{
-  /* <img id ='3' src="https://i.stack.imgur.com/7c4yC.jpg" alt=""/> */
-}
-{
-  /* <img id ='4' src="https://i.stack.imgur.com/RTiml.jpg" alt=""/> */
-}
-{
-  /* <img id ='5' src="https://i.stack.imgur.com/xckZy.jpg" alt=""/> */
-}
-{
-  /* <img id ='6' src="https://i.stack.imgur.com/CVgbr.jpg" alt=""/> */
-}
-{
-  /* <img id ='7' src="https://i.stack.imgur.com/7c4yC.jpg" alt=""/> */
-}
-{
-  /* {projects.map((project) => {
-              const { title, info, info2, url, repo, img, id } = project;
-              return (
-                <Row key={id}>
-                  <Col lg={4} sm={12}>
-                    <Fade
-                      left={isDesktop}
-                      bottom={isMobile}
-                      duration={1000}
-                      delay={500}
-                      distance="30px"
-                    >
-                      <div className="project-wrapper__text">
-                        <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
-                        <div>
-                          <p>
-                            {info ||
-                            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
-                          </p>
-                          <p className="mb-4">{info2 || ''}</p>
-                        </div>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cta-btn cta-btn--hero"
-                          href={url || '#!'}
-                        >
-                          See Live
-                        </a>
-
-                        {repo && (
-                          <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="cta-btn text-color-main"
-                            href={repo}
-                          >
-                            Source Code
-                          </a>
-                        )}
-                      </div>
-                    </Fade>
-                  </Col>
-                  <Col lg={8} sm={12}>
-                    <Fade
-                      right={isDesktop}
-                      bottom={isMobile}
-                      duration={1000}
-                      delay={1000}
-                      distance="30px"
-                    >
-                      <div className="project-wrapper__image">
-                        <a
-                          href={url || '#!'}
-                          target="_blank"
-                          aria-label="Project Link"
-                          rel="noopener noreferrer"
-                        >
-                          <Tilt
-                            options={{
-                              reverse: false,
-                              max: 8,
-                              perspective: 1000,
-                              scale: 1,
-                              speed: 300,
-                              transition: true,
-                              axis: null,
-                              reset: true,
-                              easing: 'cubic-bezier(.03,.98,.52,.99)',
-                            }}
-                          >
-                            <div data-tilt className="thumbnail rounded">
-                              <ProjectImg alt={title} filename={img} />
-                            </div>
-                          </Tilt>
-                        </a>
-                      </div>
-                    </Fade>
-                  </Col>
-                </Row>
-              );
-            })} */
-}
