@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import Title from '../Title/Title';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ArchLogo from '../../images/logos/arch-logo.png';
 
 const projects = [
-  // Add your projects here
   {
     title: 'FirstPersonShooter',
     description:
@@ -17,6 +17,11 @@ const projects = [
       'https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif',
     liveUrl: '#!',
     sourceUrl: 'https://github.com/Napalys/FirstPersonShooter',
+    icons: [
+      { src: ArchLogo, label: 'Arch linux' },
+      { src: ArchLogo, label: "Label 2" },
+      { src: ArchLogo, label: "Label 3" },
+    ],
   },
   {
     title: 'Project Title',
@@ -24,8 +29,12 @@ const projects = [
     imageUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg',
     liveUrl: '#!',
     sourceUrl: '#!',
+    icons: [
+      { src: ArchLogo, label: "Label 1" },
+      { src: ArchLogo, label: "Label 2" },
+      { src: ArchLogo, label: "Label 3" },
+    ],
   },
-  // More projects...
 ];
 const tiltOptions = {
   reverse: false,
@@ -38,34 +47,39 @@ const tiltOptions = {
   reset: true,
   easing: 'cubic-bezier(.03,.98,.52,.99)',
 };
-const ProjectItem = ({ title, description, imageUrl, liveUrl, sourceUrl }) => (
+const ProjectItem = ({ title, description, imageUrl, liveUrl, sourceUrl, icons }) => (
   <div className="sproject">
+    <div className="project-title">
+      <h3 className="project-wrapper__text-title">{title}</h3>
+    </div>
     <Tilt options={tiltOptions}>
-      <div data-tilt="" className="thumbnail rounded">
+      <div className="thumbnail rounded">
         <img className="project-image" src={imageUrl} alt="" />
       </div>
     </Tilt>
     <div className="project-text">
-      <h3 className="project-wrapper__text-title">{title}</h3>
       <div className="project-description">{description}</div>
-      <div className="project-buttons">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cta-btn cta-btn--hero"
-          href={liveUrl}
-        >
-          See Live
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cta-btn text-color-main"
-          href={sourceUrl}
-        >
-          Source Code
-        </a>
-      </div>
+    </div>
+    <div className="project-buttons">
+      <a target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--hero" href={liveUrl}>
+        See Live
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="cta-btn text-color-main"
+        href={sourceUrl}
+      >
+        Source Code
+      </a>
+    </div>
+    <div className="project-icons">
+      {icons.map((icon, index) => (
+        <div key={index} className="icon-container">
+          <img src={icon.src} alt={`Icon ${index}`} className="project-icon" />
+          <span className="icon-text">{icon.label}</span>
+        </div>
+      ))}
     </div>
   </div>
 );
@@ -76,6 +90,7 @@ ProjectItem.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   liveUrl: PropTypes.string.isRequired,
   sourceUrl: PropTypes.string.isRequired,
+  icons: PropTypes.string.isRequired,
 };
 
 const carouselProps = {
@@ -93,6 +108,9 @@ const Projects = () => (
   <section
     id="projects"
     style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       gridArea: '1/1',
       width: '100%',
       height: '100%',
