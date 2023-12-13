@@ -2,7 +2,6 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Title from '../Title/Title';
-import './_sphere.css';
 import initializeFrameworkSphere from '../../custom_animations/sphere/FrameworkSphere';
 
 class About extends React.Component {
