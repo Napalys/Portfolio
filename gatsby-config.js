@@ -33,4 +33,11 @@ module.exports = {
       },
     },
   ],
+  flags: {
+    DEV_SSR: false,
+    FAST_REFRESH: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PARALLEL_SOURCING: true,
+    FUNCTIONS: true,
+  },
 };
