@@ -77,8 +77,6 @@
       key: '_createTextItem', value: function(itemData) {
         var zIndex = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : 0, self = this,
           imgElement = document.createElement('img');
-        console.log(itemData.alt + " " + zIndex);
-
         imgElement.className = self.config.itemClass;
         if (self.config.useItemInlineStyles) {
           imgElement.style.position = 'absolute';

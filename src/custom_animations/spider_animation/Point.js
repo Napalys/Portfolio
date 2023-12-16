@@ -12,37 +12,22 @@ export default class Point {
     this.circle = null;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  findClosest(points) {
-    /* eslint-disable no-plusplus */
-    for (let i = 0; i < points.length; i++) {
-      const closest = [];
-      const p1 = points[i];
+  static findClosest(points) {
+    points.forEach(p1 => {
+      const closest = new Array(5).fill(null);
       for (let j = 0; j < points.length; j++) {
         const p2 = points[j];
-        if (p1 !== p2) {
-          let placed = false;
-          for (let k = 0; k < 5; k++) {
-            if (!placed) {
-              if (closest[k] === undefined) {
-                closest[k] = p2;
-                placed = true;
-              }
-            }
-          }
-
-          for (let h = 0; h < 5; h++) {
-            if (!placed) {
-              if (getDistance(p1, p2) < getDistance(p1, closest[h])) {
-                closest[h] = p2;
-                placed = true;
-              }
-            }
+        if (p1 === p2) continue;
+        const distance = getDistance(p1, p2);
+        for (let h = 0; h < closest.length; h++) {
+          if (closest[h] === null || distance < getDistance(p1, closest[h])) {
+            closest[h] = p2;
+            break;
           }
         }
       }
       p1.closest = closest;
-    }
+    });
   }
 
   updateActiveStatus(target) {
