@@ -87,7 +87,11 @@
           imgElement.style.top = '50%';
           imgElement.style.left = '50%';
           imgElement.style.zIndex = zIndex + 1;
-          imgElement.style.maxWidth = '150px';
+          if (window.innerWidth <= 869) {
+            imgElement.style.maxWidth = '125px';
+          } else {
+            imgElement.style.maxWidth = '150px';
+          }
           imgElement.style.height = 'auto';
           imgElement.style.transform = 'translate3d(-50%, -50%, 0) scale(1)';
         }

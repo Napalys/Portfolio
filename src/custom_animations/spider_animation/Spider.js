@@ -1,28 +1,28 @@
 import Point from './Point';
 
+const padding = 10;
+
 export default function animateIndexPage() {
+  const points = [];
   let width = window.innerWidth;
   let height = window.innerHeight;
   const target = { x: width / 2, y: height / 2 };
-  const largeHeader = document.getElementById('hero');
-  largeHeader.style.height = `${height}px`;
   const canvas = document.getElementById('demo-canvas');
-  canvas.width = width;
-  canvas.height = height;
+  // eslint-disable-next-line no-use-before-define
+  resize();
   const ctx = canvas.getContext('2d');
   let animateHeader = true;
-  const points = [];
 
   function iniPoints() {
     for (let x = 0; x < width; x += width / 20) {
       for (let y = 0; y < height; y += height / 20) {
         const point = new Point(x, y, width, height);
+        point.assignCircle();
         points.push(point);
       }
     }
     points.forEach((point) => {
       point.findClosest(points);
-      point.assignCircle();
     });
   }
 
@@ -45,18 +45,26 @@ export default function animateIndexPage() {
   }
 
   function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    largeHeader.style.height = `${height}px`;
+    width = canvas.offsetWidth - padding;
+    height = canvas.offsetHeight - padding;
     canvas.width = width;
     canvas.height = height;
   }
+
+  let resizeTimer;
+
+  function debouncedResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 250); // Adjust delay as needed
+  }
+
   function addListeners() {
-    if (!('ontouchstart' in window)) {
-      window.addEventListener('mousemove', mouseMove);
-    }
+    window.addEventListener('mousemove', mouseMove);
     window.addEventListener('scroll', scrollCheck);
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', debouncedResize);
+    window.addEventListener('orientationchange', debouncedResize);
+    window.addEventListener('fullscreenchange', debouncedResize);
+    window.addEventListener('deviceorientation', debouncedResize);
   }
   function drawLines(p) {
     if (!p.active) return;

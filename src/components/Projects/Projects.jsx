@@ -79,15 +79,11 @@ const Projects = () => (
   <section
     id="projects"
     style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
       gridArea: '1/1',
-      width: '100%',
-      height: '100%',
-      backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
-      backgroundSize: 'cover',
       zIndex: 0,
+      position: 'relative',
+      placeItems: 'center',
+      display: 'grid',
     }}
   >
     <div className="project-wrapper">

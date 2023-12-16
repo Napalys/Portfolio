@@ -7,21 +7,40 @@ import initializeFrameworkSphere from '../../custom_animations/sphere/FrameworkS
 class About extends React.Component {
   constructor(props) {
     super(props);
-    if (window.innerWidth > 769) {
-      this.state = {
-        isDesktop: true,
-        isMobile: false,
-      };
-    } else {
-      this.state = {
-        isMobile: true,
-        isDesktop: false,
-      };
+
+    // Initial state
+    this.state = {
+      isDesktop: window.innerWidth > 869,
+      isMobile: window.innerWidth <= 869,
+    };
+
+    // Variants for desktop (side fade)
+    this.desktopVariants = {
+      hidden: { opacity: 0, x: -30 },
+      visible: { opacity: 1, x: 0 },
+    };
+
+    // Variants for mobile (bottom fade)
+    this.mobileVariants = {
+      hidden: { opacity: 0, y: 30 },
+      visible: { opacity: 1, y: 0 },
+    };
+  }
+
+  getAnimationVariants() {
+    const { isDesktop, isMobile } = this.state;
+    if (isDesktop) {
+      return this.desktopVariants;
     }
+    if (isMobile) {
+      return this.mobileVariants;
+    }
+    return this.desktopVariants;
   }
 
   componentDidMount() {
-    initializeFrameworkSphere();
+    const { isMobile } = this.state;
+    initializeFrameworkSphere(isMobile);
   }
 
   render() {
@@ -37,38 +56,11 @@ class About extends React.Component {
       linkedIn: 'https://www.linkedin.com/in/napalys-klicius/',
     };
 
-    const { isDesktop, isMobile } = this.state;
-    const desktopVariants = {
-      hidden: { opacity: 0, x: -30 },
-      visible: { opacity: 1, x: 0 },
-    };
-
-    // Variants for mobile (bottom fade)
-    const mobileVariants = {
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0 },
-    };
-
-    // Choose the appropriate variants based on the device
-    // eslint-disable-next-line no-nested-ternary
-    const variants = isDesktop ? desktopVariants : isMobile ? mobileVariants : desktopVariants;
-
     return (
       <div
         className="hero-container"
         style={{ display: 'grid', gridTemplateRows: 'auto 1fr', zIndex: 0 }}
       >
-        <div
-          style={{
-            gridArea: '1/1',
-            width: '100%',
-            height: '100%',
-            backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
-            backgroundSize: 'cover',
-            zIndex: 0,
-          }}
-        />
-
         <section
           id="about"
           style={{
@@ -87,9 +79,10 @@ class About extends React.Component {
                   initial="hidden"
                   animate="visible"
                   transition={{ duration: 1, delay: 0.5 }}
-                  variants={variants}
+                  variants={this.getAnimationVariants()}
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%' }}
                 >
-                  <span className="Sphere" />
+                  <span className="Sphere" style={{ display: 'inline-block' }} />
                 </motion.div>
               </Col>
               <Col style={{ gridColumn: 1 }}>
@@ -97,7 +90,7 @@ class About extends React.Component {
                   initial="hidden"
                   animate="visible"
                   transition={{ duration: 1, delay: 0.5 }}
-                  variants={variants}
+                  variants={this.getAnimationVariants()}
                 >
                   <div className="about-wrapper__info">
                     <p className="about-wrapper__info-text">{paragraphOne}</p>
