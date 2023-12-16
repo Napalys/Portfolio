@@ -75,14 +75,14 @@
     }
   }
   @media (max-width: 812px) and (orientation: portrait) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
       "title title"
       "image image"
       "text text"
       "icons icons"
       "buttons buttons";
-    max-width: 600px;
+    max-width: 400px;
   }
 
 }
@@ -103,7 +103,7 @@
 }
 
 .icon-container {
-  position: relative; // Needed for absolute positioning of the text
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,7 +148,6 @@
 .project-wrapper__text-title {
   font-size: 2.2rem; // Even larger font size
   font-weight: 550; // Heavier font weight for more boldness
-  // You can add other styling properties if needed
 }
 
 .project-title {
