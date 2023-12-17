@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import YouTube from 'react-youtube';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
 
 const Contact = () => {
   const { contact } = useContext(PortfolioContext);
   const { cta, btn, email } = contact;
+  // Initial state
+  const state = {
+    isDesktop: window.innerWidth > 869,
+    isMobile: window.innerWidth <= 869,
+  };
 
   // Animation settings
   const fadeVariants = {
@@ -18,6 +24,9 @@ const Contact = () => {
     <section id="contact">
       <Container>
         <Title title="Contact" />
+        {!state.isMobile && <div className="video-container">
+            <YouTube videoId="cX5Hr7qTQVc" />
+        </div>}
         <motion.div
           initial="hidden"
           animate="visible"
