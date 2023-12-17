@@ -6,6 +6,8 @@
   //margin-top: -15rem;
   margin-bottom: -1px;
   color: $white-color;
+  height: 70vh;
+
 
   @include respond(tab-land) {
     padding: 10rem 0;

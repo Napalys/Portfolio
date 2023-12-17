@@ -46,19 +46,15 @@
       }
 
       &-text {
-        text-align: left;
-        font-size: 1.5rem;
+        text-align: center;
+        font-size: 2rem;
         @media (max-width: 812px) and (orientation: landscape) {
-          .project-wrapper {
-            font-size: 0.7rem;
+            font-size: 1.5rem;
             text-align: left;
-          }
         }
         @media (max-width: 812px) and (orientation: portrait) {
-          .project-wrapper {
-            font-size: 0.7rem;
+            font-size: 1.5rem;
             text-align: center;
-          }
         }
 
         &--important {
@@ -81,6 +77,7 @@
     }
   }
 }
+
 
 #logo{
   position: absolute;

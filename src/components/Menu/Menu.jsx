@@ -3,17 +3,10 @@ import PropTypes from 'prop-types';
 
 const Menu = ({ menuBtnClicked }) => {
   const menuItems = [
-    {
-      id: 'heroMenu',
-      title: 'Home',
-      position: '40%',
-      number: '0',
-      section: 'hero',
-      extraClass: 'onVisitSection',
-    },
-    { id: 'aboutMenu', title: 'About', position: '45%', number: '1', section: 'about' },
-    { id: 'projectsMenu', title: 'Projects', position: '50%', number: '2', section: 'projects' },
-    { id: 'contactMenu', title: 'Contact', position: '55%', number: '3', section: 'contact' },
+    { id: 'heroMenu', position: '40%', number: 'Front', section: 'hero', extraClass: 'onVisitSection' },
+    { id: 'aboutMenu', position: '45%', number: 'About', section: 'about' },
+    { id: 'projectsMenu', position: '50%', number: 'Projects', section: 'projects' },
+    { id: 'contactMenu', position: '55%', number: 'Contact', section: 'contact' },
   ];
 
   return (
@@ -29,9 +22,6 @@ const Menu = ({ menuBtnClicked }) => {
           >
             {item.number}
           </button>
-          <span className="title" style={{ top: `calc(${item.position} + 1%)` }}>
-            {item.title}
-          </span>
         </>
       ))}
     </>

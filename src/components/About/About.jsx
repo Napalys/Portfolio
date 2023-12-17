@@ -51,10 +51,12 @@ class About extends React.Component {
         "Hello there! I'm Napalys Kličius, a passionate software developer with a master's degree in Computer Science. I thrive on being a Problem Solver, armed with a diverse skill set that extends from object-oriented programming to logical and functional paradigms. ",
       paragraphTwo: 'Intrigued? If you want to know more about me checkout my LinkedIn or GitHub!',
       paragraphThree:
-        'On the left side one may see the technologies I have the most experience with. Fun fact about me, my favorite programming language is C++.',
+        'Sphere displays the technologies I have the most experience with. Fun fact about me, my favorite programming language is C++.',
       resume: 'https://github.com/Napalys',
       linkedIn: 'https://www.linkedin.com/in/napalys-klicius/',
     };
+
+    const { isMobile } = this.state;
 
     return (
       <div
@@ -91,30 +93,33 @@ class About extends React.Component {
                   animate="visible"
                   transition={{ duration: 1, delay: 0.5 }}
                   variants={this.getAnimationVariants()}
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', paddingRight: !isMobile ? '35px' : '0px', }}
+
                 >
                   <div className="about-wrapper__info">
                     <p className="about-wrapper__info-text">{paragraphOne}</p>
                     <p className="about-wrapper__info-text">{paragraphThree}</p>
                     <p className="about-wrapper__info-text">{paragraphTwo}</p>
                     {resume && (
-                      <span className="d-flex mt-3">
+                      <div className="d-flex justify-content-center mt-3">
                         <a
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="cta-btn cta-btn--resume"
+                          className="cta-btn cta-btn--hero"
                           href={resume}
+                          style={{ marginRight: '10px' }}
                         >
                           Github
                         </a>
                         <a
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="cta-btn cta-btn--resume"
+                          className="cta-btn cta-btn--hero"
                           href={linkedIn}
                         >
                           LinkedIn
                         </a>
-                      </span>
+                      </div>
                     )}
                   </div>
                 </motion.div>
