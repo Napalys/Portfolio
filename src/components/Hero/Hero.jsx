@@ -27,7 +27,7 @@ class Header extends React.Component {
 
   componentDidMount() {
     animateIndexPage();
-    const { isMobile } = this.state;
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
     if (!isMobile) {
       enableCustomScrolling();
     }
@@ -39,7 +39,8 @@ class Header extends React.Component {
       name: 'Napalys Klicius',
       cta: "Let's talk ?",
     };
-    const { isDesktop, isMobile } = this.state;
+    const { isDesktop } = this.state;
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
 
     // Variants for desktop (left fade)
     const desktopVariants = {
@@ -65,7 +66,7 @@ class Header extends React.Component {
             position: 'relative',
             placeItems: 'center',
             display: 'grid',
-            width: '100vw',
+            width: '98vw',
             zIndex: 1,
             height: '98vh',
           }}

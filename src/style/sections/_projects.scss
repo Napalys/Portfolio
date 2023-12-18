@@ -5,7 +5,7 @@
   min-height: 100vh;
   background-size: cover;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") center;
-
+  padding-bottom: 3rem;
 
 
   @media (max-width: 812px) {
@@ -32,10 +32,9 @@
       padding: 1rem;
     }
     @media (max-width: 812px) and (orientation: landscape) {
-      .project-wrapper {
-        max-width: 100%;
-        height: auto;
-      }
+      max-width: 100%;
+      height: auto;
+      padding-right: 0;
     }
   }
 }

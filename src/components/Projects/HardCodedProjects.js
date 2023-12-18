@@ -20,16 +20,16 @@ export const projects = [
       { src: UnrealEngine, label: 'Unreal Engine 4' },
     ]
   ),
-  new Project(
-    'Project Title',
-    'Lorem ipsum dolor sit...',
-    'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg',
-    'https://example.com/live',
-    'https://example.com/source',
-    [
-      { src: ArchLogo, label: 'Label 1' },
-      { src: ArchLogo, label: 'Label 2' },
-      { src: ArchLogo, label: 'Label 3' },
-    ]
-  ),
+  // new Project(
+  //   'Project Title',
+  //   'Lorem ipsum dolor sit...',
+  //   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg',
+  //   'https://example.com/live',
+  //   'https://example.com/source',
+  //   [
+  //     { src: ArchLogo, label: 'Label 1' },
+  //     { src: ArchLogo, label: 'Label 2' },
+  //     { src: ArchLogo, label: 'Label 3' },
+  //   ]
+  // ),
 ];
