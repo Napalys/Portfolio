@@ -80,58 +80,6 @@
   }
 }
 
-
-#logo{
-  position: absolute;
-}
-
-body{background-color:#1A1919;text-align:center;}
-
-.tileContainer{
-  display: flex;
-  height: inherit;
-  width: inherit;
-  align-items: inherit center;
-  justify-content: inherit center;
-  object-fit: cover;
-}
-
-
-.tile{
-  position:relative;
-  vertical-align:top;
-  display:inline-block;
-  border-right:1px solid rgba(0, 0, 0, 0.5);
-  border-bottom:1px solid rgba(0, 0, 0, 0.5);
-}
-
-.tile:after{
-  content:"";
-  background-color:#cc1c32;
-  width:6px;
-  height:6px;
-  position:absolute;
-  top:100%;
-  right:0px;
-  transform:translate(50%, -50%);
-  z-index:2;
-  line-height:1;
-}
-
-/*-- no grid --*/
-
-.noGrid .tile{
-  border-right:0px solid rgba(0, 0, 0, 0.5);
-  border-bottom:0px solid rgba(0, 0, 0, 0.5);
-}
-
-.noGrid .tile:after{
-  content:none;
-}
-:root {
-  --clr-neon: hsl(317 100% 54%);
-  --clr-bg: hsl(323 21% 16%);
-}
 .neonIcon {
   font-size: 4rem;
   display: inline-block;
@@ -155,21 +103,4 @@ body{background-color:#1A1919;text-align:center;}
   50% {
     filter: drop-shadow(1px 1px 10px #b07219) brightness(1.5);
   }
-}
-
-
-.neonIconCsharp {
-  -webkit-filter: drop-shadow(1px 1px 3px #178600);
-}
-
-.neonIconJava {
-  -webkit-filter: drop-shadow(1px 1px 3px #b07219);
-}
-
-.neonIconSql {
-  -webkit-filter: drop-shadow(1px 1px 3px #dad8d8);
-}
-
-.neonIconRust {
-  -webkit-filter: drop-shadow(1px 1px 3px #dea584);
 }
