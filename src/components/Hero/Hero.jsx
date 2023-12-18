@@ -65,6 +65,7 @@ class Header extends React.Component {
             position: 'relative',
             placeItems: 'center',
             display: 'grid',
+            width: '100vw',
             zIndex: 1,
             height: '98vh',
           }}
