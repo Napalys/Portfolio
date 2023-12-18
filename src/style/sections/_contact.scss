@@ -9,7 +9,6 @@
     padding: 10rem 0;
     clip-path: none;
     margin-top: 0;
-    -webkit-clip-path: none;
   }
 
   .contact-wrapper {
@@ -25,7 +24,6 @@
     a {
       font-size: 2.4rem;
 
-      // Responsive for contact text
       @include respond(phone) {
         font-size: 2rem;
       }
