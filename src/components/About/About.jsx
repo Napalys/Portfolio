@@ -28,18 +28,11 @@ class About extends React.Component {
   }
 
   getAnimationVariants() {
-    const { isDesktop, isMobile } = this.state;
-    if (isDesktop) {
-      return this.desktopVariants;
-    }
-    if (isMobile) {
-      return this.mobileVariants;
-    }
-    return this.desktopVariants;
+    return window.matchMedia('(pointer: coarse)').matches;
   }
 
   componentDidMount() {
-    const { isMobile } = this.state;
+    const isMobile = this.getAnimationVariants();
     initializeFrameworkSphere(isMobile);
   }
 
@@ -56,7 +49,7 @@ class About extends React.Component {
       linkedIn: 'https://www.linkedin.com/in/napalys-klicius/',
     };
 
-    const { isMobile } = this.state;
+    const isMobile = this.getAnimationVariants();
 
     return (
       <div
@@ -93,7 +86,7 @@ class About extends React.Component {
                   animate="visible"
                   transition={{ duration: 1, delay: 0.5 }}
                   variants={this.getAnimationVariants()}
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', paddingRight: !isMobile ? '35px' : '0px', }}
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', paddingRight: !isMobile ? '55px' : '0px', }}
 
                 >
                   <div className="about-wrapper__info">

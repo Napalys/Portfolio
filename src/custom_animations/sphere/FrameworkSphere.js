@@ -34,6 +34,7 @@ const Texts = [
 export default function initializeFrameworkSphere(isMobile) {
   let radius = 300;
   if (isMobile) radius = 150;
+  console.log(isMobile)
   TagCloud('.Sphere', Texts, {
     radius,
     maxSpeed: 'normal',

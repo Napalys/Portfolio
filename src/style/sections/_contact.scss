@@ -27,6 +27,31 @@
       @include respond(phone) {
         font-size: 2rem;
       }
+      @media only screen and (max-width: 1000px) and (orientation: landscape) {
+        font-size: 1.7rem;
+      }
     }
   }
+
+  .video-container {
+    width: 80%;
+    position: relative;
+    padding-top: 33.25%; /* Aspect ratio - for 16:9 use 56.25%, for 4:3 use 75%, etc. */
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media only screen and (max-width: 1000px) and (orientation: landscape) {
+    .video-container {
+      display: none; /* This will make the .video-container non-existent on small landscape screens */
+    }
+  }
+
+
 }
