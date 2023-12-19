@@ -24,13 +24,14 @@ a:hover {
 
 .section-title {
   margin: 0px;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   font-size: $big-font-size;
   font-weight: bold;
   text-transform: uppercase;
 
-  @include respond(phone) {
+  @media (max-width: 812px) and (orientation: landscape) {
     font-size: 2.8rem;
+    margin-bottom: 2rem;
   }
 }
 

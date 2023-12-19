@@ -1,10 +1,14 @@
 // Section
 section {
-  padding: 5rem 0rem;
+  padding: 5rem 0;
 
   @include respond(phone) {
     border: none;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  @media (max-width: 812px) and (orientation: landscape) {
+    padding: 1rem 0;  /* Adjust padding for landscape orientation */
+    /* You can add more styling changes here if needed */
   }
 }

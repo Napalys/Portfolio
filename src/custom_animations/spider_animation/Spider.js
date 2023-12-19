@@ -1,43 +1,34 @@
 import Point from './Point';
 
+const padding = 10;
+
 export default function animateIndexPage() {
+  let points = [];
   let width = window.innerWidth;
   let height = window.innerHeight;
   const target = { x: width / 2, y: height / 2 };
-  const largeHeader = document.getElementById('hero');
-  largeHeader.style.height = `${height}px`;
   const canvas = document.getElementById('demo-canvas');
-  canvas.width = width;
-  canvas.height = height;
   const ctx = canvas.getContext('2d');
   let animateHeader = true;
-  const points = [];
 
   function iniPoints() {
+    points = [];
     for (let x = 0; x < width; x += width / 20) {
       for (let y = 0; y < height; y += height / 20) {
         const point = new Point(x, y, width, height);
+        point.assignCircle();
         points.push(point);
       }
     }
+    Point.findClosest(points);
     points.forEach((point) => {
-      point.findClosest(points);
-      point.assignCircle();
+      point.shift();
     });
   }
 
   function mouseMove(e) {
-    let posX = 0;
-    let posY = 0;
-    if (e.pageX || e.pageY) {
-      posX = e.pageX;
-      posY = e.pageY;
-    } else if (e.clientX || e.clientY) {
-      posX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-      posY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
-    target.x = posX;
-    target.y = posY;
+    target.x = e.pageX;
+    target.y = e.pageY;
   }
 
   function scrollCheck() {
@@ -45,28 +36,38 @@ export default function animateIndexPage() {
   }
 
   function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    largeHeader.style.height = `${height}px`;
+    width = canvas.offsetWidth - padding;
+    height = canvas.offsetHeight - padding;
     canvas.width = width;
     canvas.height = height;
   }
+
+  let resizeTimer;
+
+  function debouncedResize() {
+    console.log("debouncedResize : ")
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 250); // Adjust delay as needed
+    resize();
+    iniPoints();
+  }
+
   function addListeners() {
-    if (!('ontouchstart' in window)) {
-      window.addEventListener('mousemove', mouseMove);
-    }
+    window.addEventListener('mousemove', mouseMove);
     window.addEventListener('scroll', scrollCheck);
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', debouncedResize);
+    window.addEventListener('orientationchange', debouncedResize);
+    window.addEventListener('fullscreenchange', debouncedResize);
   }
   function drawLines(p) {
     if (!p.active) return;
+    ctx.beginPath();
     p.closest.forEach((closestPoint) => {
-      ctx.beginPath();
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(closestPoint.x, closestPoint.y);
-      ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
-      ctx.stroke();
     });
+    ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
+    ctx.stroke();
   }
 
   function animate() {
@@ -80,14 +81,9 @@ export default function animateIndexPage() {
     }
     requestAnimationFrame(animate);
   }
-  function initAnimation() {
-    animate();
-    points.forEach((point) => {
-      point.shift();
-    });
-  }
 
+  resize();
   iniPoints();
-  initAnimation();
+  animate();
   addListeners();
 }

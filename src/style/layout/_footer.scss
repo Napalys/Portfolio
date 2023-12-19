@@ -1,8 +1,10 @@
 .footer {
   background-color: $dark-grey;
   color: $white-color;
-  padding: 4.8rem 0;
-
+  height: 21vh;
+  @media only screen and (max-width: 1000px) and (orientation: landscape) {
+    height: 41vh;
+  }
   @include respond(phone) {
     border: 0px;
   }
@@ -49,7 +51,7 @@
     font-size: 3rem;
     width: 5rem;
     height: 5rem;
-    margin: $default-font-size $default-font-size;
+    //margin: $default-font-size $default-font-size;
     transition: all 0.2s ease-in;
 
     &:hover {
