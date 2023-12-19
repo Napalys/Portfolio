@@ -4,12 +4,10 @@ import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
 import GithubButtons from './GithubButtons';
 
-import { githubButtons } from '../../mock/data';
-
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
   const { networks } = footer;
-  const { isEnabled } = githubButtons;
+  const isMobile = window.matchMedia('(pointer: coarse)').matches;
 
   return (
     <footer className="footer navbar-static-bottom">
@@ -38,7 +36,7 @@ const Footer = () => {
         </div>
         <hr />
 
-        {isEnabled && <GithubButtons />}
+        {!isMobile && <GithubButtons />}
       </Container>
     </footer>
   );

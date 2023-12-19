@@ -6,7 +6,7 @@
 
 
   @include respond(tab-land) {
-    padding: 10rem 0;
+    padding: 3rem 0;
     clip-path: none;
     margin-top: 0;
   }
@@ -47,7 +47,7 @@
     width: 100%;
     height: 100%;
   }
-  @media only screen and (max-width: 1000px) and (orientation: landscape) {
+  @media only screen and (max-width: 1500px) and (orientation: landscape) {
     .video-container {
       display: none; /* This will make the .video-container non-existent on small landscape screens */
     }

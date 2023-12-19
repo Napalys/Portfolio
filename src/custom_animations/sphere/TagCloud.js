@@ -85,7 +85,7 @@
           imgElement.style.top = '50%';
           imgElement.style.left = '50%';
           imgElement.style.zIndex = zIndex + 1;
-          if (window.innerWidth <= 869) {
+          if (window.innerWidth <= 1200) {
             imgElement.style.maxWidth = '125px';
           } else {
             imgElement.style.maxWidth = '150px';
