@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import Title from '../Title/Title';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { projects } from './HardCodedProjects';
+import { projects } from './ProjectLoader';
 import Project from './Project';
 
 const tiltOptions = {
@@ -18,6 +18,7 @@ const tiltOptions = {
   reset: true,
   easing: 'cubic-bezier(.03,.98,.52,.99)',
 };
+
 const ProjectItem = ({ project }) => (
   <div className="sproject">
     <div className="project-title">
@@ -40,20 +41,30 @@ const ProjectItem = ({ project }) => (
       >
         See Live
       </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className="cta-btn text-color-main"
-        href={project.sourceUrl}
-      >
-        Source Code
-      </a>
+      {project.sourceUrl ? (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-btn text-color-main"
+          href={project.sourceUrl}
+        >
+          Source Code
+        </a>
+      ) : (
+        <button className="cta-btn" disabled>
+          {project.sourceUrl === '' ? 'Closed Source' : 'No Source Available'}
+        </button>
+      )}
     </div>
     <div className="project-icons">
       {project.icons.map((icon) => (
         <div key={icon.label} className="icon-container">
           {' '}
-          <img src={icon.src} alt={icon.label} className="project-icon" />
+          <img
+            src={require(`../../images/logos/${icon.src}`).default}
+            alt={icon.label}
+            className="project-icon"
+          />
           <span className="icon-text">{icon.label}</span>
         </div>
       ))}

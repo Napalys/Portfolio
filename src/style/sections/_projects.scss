@@ -189,6 +189,23 @@
   padding-top: 20px;
 }
 
+.project-buttons button {
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #b4b3b3;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  position: relative;
+}
+
+.project-buttons button:hover {
+  color: #a10202;
+}
+
 .project-description {
   font-size: 2.0rem;
   padding: 10px;
