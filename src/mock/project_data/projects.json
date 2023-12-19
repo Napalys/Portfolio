@@ -1,9 +1,9 @@
 [
   {
-    "title": "FirstPersonShooter",
+    "title": "First Person Shooter",
     "description": "One of my old side projects during my bachelor, it's completely open-source and may act as guidance for someone who just starts developing. I would highly recommend taking a look first at the Blueprint system, before digging into C++ code. The code is compatible with the Unreal Engine 4.26 version",
     "imageUrl": "https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif",
-    "liveUrl": "#!",
+    "liveUrl": "https://github.com/Napalys/FirstPersonShooter",
     "sourceUrl": "https://github.com/Napalys/FirstPersonShooter",
     "icons": [
       { "src": "arch-logo.png", "label": "Arch linux" },
@@ -13,15 +13,25 @@
   },
 
   {
-    "title": "TEst",
+    "title": "j-Ecdar",
     "description": "test",
-    "imageUrl": "https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif",
-    "liveUrl": "#!",
-    "sourceUrl": "",
+    "imageUrl": "https://github-production-user-asset-6210df.s3.amazonaws.com/11835209/291699950-697ca35e-f822-4d19-b564-b034523232d7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231219%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231219T200027Z&X-Amz-Expires=300&X-Amz-Signature=84914a9c2cb87b50b733d0fa2efb0a2712b2695223bc38e463658b5d8b08fcf1&X-Amz-SignedHeaders=host&actor_id=11835209&key_id=0&repo_id=353656169",
+    "liveUrl": "https://vbn.aau.dk/ws/files/305757029/JECDAR_0.2.pdf",
+    "sourceUrl": "https://github.com/Ecdar/j-Ecdar",
     "icons": [
-      { "src": "arch-logo.png", "label": "Arch linux" },
       { "src": "cpp-logo.png", "label": "C++" },
-      { "src": "unreal-engine-logo.png", "label": "Unreal Engine 4" }
+      { "src": "java-logo.png", "label": "Java" }
+    ]
+  },
+
+  {
+    "title": "Reveaal",
+    "description": "test",
+    "imageUrl": "https://private-user-images.githubusercontent.com/11835209/291700989-e5effca6-2009-4184-b36c-3d7774929e1a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDMwMTY1ODIsIm5iZiI6MTcwMzAxNjI4MiwicGF0aCI6Ii8xMTgzNTIwOS8yOTE3MDA5ODktZTVlZmZjYTYtMjAwOS00MTg0LWIzNmMtM2Q3Nzc0OTI5ZTFhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjE5VDIwMDQ0MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQyNTQ4NjI4ZDRkMDcyZTVlNjAwZWU1OTlhMjJmMjk1MjJlMTdlNjdkM2VhYmQyZGZiZDgzNjllMzJhYmEwYjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.u5Mv_LWPEFebnpi56T-SjjlPgSgv5_day8aM3l5ka3E",
+    "liveUrl": "https://www.ecdar.net/",
+    "sourceUrl": "https://github.com/Ecdar/Reveaal",
+    "icons": [
+      { "src": "rust-logo.png", "label": "Rust" }
     ]
   }
 ]
