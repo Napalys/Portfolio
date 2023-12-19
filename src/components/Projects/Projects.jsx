@@ -75,7 +75,14 @@ const ProjectItem = ({ project }) => (
 ProjectItem.propTypes = {
   project: PropTypes.instanceOf(Project).isRequired,
 };
-
+const CustomArrow = ({ direction, onClick }) => {
+  const arrowClass = `custom-arrow custom-arrow-${direction}`;
+  return (
+    <button className={arrowClass} onClick={onClick}>
+      {direction === 'left' ? '←' : '→'}
+    </button>
+  );
+};
 const carouselProps = {
   showArrows: true,
   autoPlay: true,
@@ -84,6 +91,12 @@ const carouselProps = {
   showIndicators: false,
   showThumbs: false,
   swipeable: false,
+  interval: 7500,
+  renderArrowPrev: (onClickHandler, hasPrev) =>
+    hasPrev && <CustomArrow direction="left" onClick={onClickHandler} />,
+  renderArrowNext: (onClickHandler, hasNext) =>
+    hasNext && <CustomArrow direction="right" onClick={onClickHandler} />,
+
 };
 
 const Projects = () => (
