@@ -31,9 +31,12 @@ const Texts = [
   { url: ArchLogo, alt: 'Arch Linux' },
 ];
 
-export default function initializeFrameworkSphere() {
+export default function initializeFrameworkSphere(isMobile) {
+  let radius = 300;
+  if (isMobile) radius = 150;
+  if (isMobile && window.innerWidth >= 1200) radius = 250;
   TagCloud('.Sphere', Texts, {
-    radius: 300,
+    radius,
     maxSpeed: 'normal',
     initSpeed: 'normal',
     direction: 135,

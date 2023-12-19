@@ -4,7 +4,7 @@ let counter = 0;
 let sections;
 let scrollInAction = false;
 
-(() => {
+export function enableCustomScrolling() {
   disableOriginalScrolling();
   sections = document.getElementsByTagName('section');
   function performScroll(delta) {
@@ -36,15 +36,20 @@ let scrollInAction = false;
     const delta = deltaValues[e.code] || 0;
     performScroll(delta);
   });
-})();
+}
 
 export const heroBtnClicked = () => {
   if (scrollInAction) return;
   const buttons = document.getElementsByClassName('round-button');
-  buttons[counter].classList.remove('onVisitSection');
-  counter = 3;
-  sections[counter].scrollIntoView({ behavior: 'smooth' });
-  buttons[counter].classList.add('onVisitSection');
+  if (buttons.length !== 0) {
+    buttons[counter].classList.remove('onVisitSection');
+    counter = 3;
+    sections[counter].scrollIntoView({ behavior: 'smooth' });
+    buttons[counter].classList.add('onVisitSection');
+  } else {
+    const sections1 = document.getElementsByTagName('section');
+    sections1[3].scrollIntoView({ behavior: 'smooth' });
+  }
   scrollInAction = true;
   setTimeout(() => {
     scrollInAction = false;

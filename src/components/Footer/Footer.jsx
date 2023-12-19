@@ -4,12 +4,10 @@ import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
 import GithubButtons from './GithubButtons';
 
-import { githubButtons } from '../../mock/data';
-
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
   const { networks } = footer;
-  const { isEnabled } = githubButtons;
+  const isMobile = window.matchMedia('(pointer: coarse)').matches;
 
   return (
     <footer className="footer navbar-static-bottom">
@@ -26,7 +24,7 @@ const Footer = () => {
               return (
                 <a
                   key={id}
-                  href={url || 'https://github.com/cobidev/gatsby-simplefolio'}
+                  href={url || 'https://github.com/Napalys'}
                   rel="noopener noreferrer"
                   target="_blank"
                   aria-label={name}
@@ -37,14 +35,8 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">
-          © {new Date().getFullYear()} - Template developed by{' '}
-          <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
-            Jacobo Martínez
-          </a>
-        </p>
 
-        {isEnabled && <GithubButtons />}
+        {!isMobile && <GithubButtons />}
       </Container>
     </footer>
   );

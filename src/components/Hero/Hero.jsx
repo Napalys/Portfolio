@@ -3,16 +3,16 @@ import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import animateIndexPage from '../../custom_animations/spider_animation/Spider';
 import Menu from '../Menu/Menu';
-
-const {
+import {
+  enableCustomScrolling,
   heroBtnClicked,
   menuBtnClicked,
-} = require(`../../custom_animations/custom_scrolling/customScrolling`);
+} from '../../custom_animations/custom_scrolling/customScrolling';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    if (window.innerWidth > 769) {
+    if (window.innerWidth > 869) {
       this.state = {
         isDesktop: true,
         isMobile: false,
@@ -27,6 +27,10 @@ class Header extends React.Component {
 
   componentDidMount() {
     animateIndexPage();
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+    if (!isMobile) {
+      enableCustomScrolling();
+    }
   }
 
   render() {
@@ -35,7 +39,8 @@ class Header extends React.Component {
       name: 'Napalys Klicius',
       cta: "Let's talk ?",
     };
-    const { isDesktop, isMobile } = this.state;
+    const { isDesktop } = this.state;
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
 
     // Variants for desktop (left fade)
     const desktopVariants = {
@@ -53,31 +58,29 @@ class Header extends React.Component {
     const variant = isDesktop ? desktopVariants : isMobile ? mobileVariants : desktopVariants;
 
     return (
-      <div className="hero-container" style={{ display: 'grid' }}>
-        <div
-          style={{
-            gridArea: '1/1',
-            width: '100%',
-            height: '100%',
-            backgroundImage: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg)',
-            backgroundSize: 'cover',
-          }}
-        />
+      <div id="hero-canvas" className="hero-container" style={{ display: 'grid' }}>
         <canvas
           id="demo-canvas"
-          style={{ gridArea: '1/1', position: 'relative', placeItems: 'center', display: 'grid' }}
+          style={{
+            gridArea: '1/1',
+            position: 'relative',
+            placeItems: 'center',
+            display: 'grid',
+            width: '98vw',
+            zIndex: 1,
+            height: '98vh',
+          }}
         />
         <section
           id="hero"
           style={{
             gridArea: '1/1',
-            zIndex: 2000,
             position: 'relative',
             placeItems: 'center',
             display: 'grid',
           }}
         >
-          <Menu menuBtnClicked={menuBtnClicked} />
+          {!isMobile && <Menu menuBtnClicked={menuBtnClicked} />}
           <Container>
             <motion.div
               initial="hidden"
@@ -107,6 +110,7 @@ class Header extends React.Component {
                   id="hero-btn"
                   className="cta-btn cta-btn--hero"
                   onClick={heroBtnClicked}
+                  style={{ zIndex: 2000 }}
                 >
                   {cta}
                 </button>
