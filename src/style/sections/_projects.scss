@@ -8,7 +8,7 @@
   padding-bottom: 3rem;
 
 
-  @media (max-width: 812px) {
+  @media (max-width: 1000px) {
     #projects {
       background-size: 100% 100%; /* Adjust for landscape orientation */
     }
@@ -31,7 +31,7 @@
       margin-bottom: 0;
       padding: 1rem;
     }
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 1000px) {
       max-width: 100%;
       height: auto;
       padding-right: 0;
@@ -55,7 +55,7 @@
 
 
 
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 1000px) and (orientation: landscape) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "title title"
@@ -68,12 +68,12 @@
     .project-buttons a {
       font-size: smaller;
       padding: 5px 10px;
-      @media (max-width: 812px) and (orientation: landscape) {
+      @media (max-width: 1000px) and (orientation: landscape) {
         padding: 2px 10px;
       }
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 1000px) and (orientation: portrait) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "title title"
@@ -95,7 +95,7 @@
   padding: 10px 0; // Padding above and below the icon list
   width: fit-content; // Restricts the width to its content
   margin: auto; // Centers the container in the grid area
-  @media (max-width: 812px)  {
+  @media (max-width: 1000px)  {
     gap: 15px;
     padding: 5px 0;
   }
@@ -113,7 +113,7 @@
     height: 100px; // Ensuring the height is the same as the width
     object-fit: contain; // Keeps the image aspect ratio
     transition: box-shadow 0.3s ease; // Smooth transition for the glow effect
-    @media (max-width: 812px)  {
+    @media (max-width: 1000px)  {
       width: 45px;
       height: 45px;
     }
@@ -129,7 +129,7 @@
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     font-size: 15px;
-    @media (max-width: 812px) {
+    @media (max-width: 1000px) {
       font-size: 8px;
       bottom: -10px;
     }
@@ -154,7 +154,7 @@
   text-align: center;
   color: $dark-blue-text;
   font-size: 30px;
-  @media (max-width: 812px) {
+  @media (max-width: 1000px) {
     font-size: 20px;
   }
 }
@@ -163,7 +163,7 @@
   grid-area: text;
   width: 100%;
   padding: 10px;
-  @media (max-width: 812px)  {
+  @media (max-width: 1000px)  {
     padding: 5px;
   }
 }
@@ -192,7 +192,7 @@
 .project-description {
   font-size: 2.0rem;
   padding: 10px;
-  @media (max-width: 812px){
+  @media (max-width: 1000px){
     font-size: 1.5rem;
   }
 }
