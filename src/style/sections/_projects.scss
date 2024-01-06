@@ -148,6 +148,35 @@
   font-size: 2.2rem; // Even larger font size
   font-weight: 550; // Heavier font weight for more boldness
 }
+.custom-arrow {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: transparent; /* Since the background is the focus */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  font-size: 30px; /* Adjust size as needed */
+  cursor: pointer;
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+}
+
+.custom-arrow:hover {
+  /* Adjust hover effect as desired, maybe a slight change in gradient or opacity */
+  opacity: 0.8;
+}
+
+.custom-arrow-left {
+  left: 10px;
+}
+
+.custom-arrow-right {
+  right: 10px;
+}
+
 
 .project-title {
   grid-area: title;
@@ -187,6 +216,23 @@
   justify-content: center;
   gap: 10px;
   padding-top: 20px;
+}
+
+.project-buttons button {
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #b4b3b3;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  position: relative;
+}
+
+.project-buttons button:hover {
+  color: #a10202;
 }
 
 .project-description {
