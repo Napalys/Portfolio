@@ -1,6 +1,6 @@
 # Portolio website
 
-Greetings! 🌟 Explore my professional portfolio website repository, where I've dedicatedly crafted and built this platform to highlight my skills, projects, and experiences as a software engineer in the dynamic world of technology.
+Greetings! Explore my portfolio website repository, where I've dedicatedly crafted and built this platform to highlight my skills, projects, and experiences as a software engineer in the dynamic world of technology.
 
 ---
 
