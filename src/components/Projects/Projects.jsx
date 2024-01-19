@@ -30,7 +30,14 @@ const ProjectItem = ({ project }) => (
       </div>
     </Tilt>
     <div className="project-text">
-      <div className="project-description">{project.description}</div>
+      <div className="project-description">
+        {project.description.split('\n').map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </div>
     </div>
     <div className="project-buttons">
       <a
