@@ -33,5 +33,29 @@
     "icons": [
       { "src": "rust-logo.png", "label": "Rust" }
     ]
-  }
+  },
+
+  {
+    "title": "Swarm-Robotics",
+    "description": "During my tenure as a research assistant, I actively contributed to the realm of Swarm Robotics. My primary focus involved the development of a seamless integration between the Argos3 simulation and Uppaal, a crucial aspect of the project. \n\nOur collective goal was to design an efficient mechanism for a swarm of robots to collaboratively execute a set of tasks without causing interference. Leveraging Uppaal's capabilities, we aimed to create an optimal system where robots could operate harmoniously, avoiding conflicts while performing intricate tasks. This innovative approach holds promising applications, such as optimizing processes in manufacturing environments like a Lego factory, where robots could work collaboratively to assemble custom orders of Lego bricks without disruption. ",
+    "imageUrl": "https://github-production-user-asset-6210df.s3.amazonaws.com/11835209/298175201-af8b6791-aca9-4263-90b7-cb5507227a6c.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240119T192419Z&X-Amz-Expires=300&X-Amz-Signature=bf3dac09696053ec2ff8f2e95e5cc4ae7b1a63bbd056c7cd9e4f4270a465893d&X-Amz-SignedHeaders=host&actor_id=11835209&key_id=0&repo_id=353656169",
+    "liveUrl": "https://ojs.aaai.org/index.php/ICAPS/article/view/19843/19602",
+    "sourceUrl": "https://github.com/DEIS-Tools/Swarm-Robotics",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" }
+    ]
+  },
+  {
+    "title": "Attachable-clicker",
+    "description": "",
+    "imageUrl": "https://user-images.githubusercontent.com/11835209/106388860-af4fd180-63e0-11eb-87b1-bece9058c308.png",
+    "liveUrl": "https://github.com/Napalys/Attachable-clicker/releases/tag/0.1.0",
+    "sourceUrl": "https://github.com/Napalys/Attachable-clicker",
+    "icons": [
+      {
+        "src": "cpp-logo.png",
+        "label": "C++"
+      }
+    ]
+  },
 ]
