@@ -45,17 +45,15 @@
       { "src": "cpp-logo.png", "label": "C++" }
     ]
   },
+
   {
     "title": "Attachable-clicker",
-    "description": "",
+    "description": "I, like many software enthusiasts, have spent numerous hours glued to my computer screen, whether engaged in playing video games or performing other tasks. The monotony and tedium of repetitive actions prompted me to seek a solution through automation. \"Attachable-clicker\" is a product of one such instance when I was gaming with friends and faced the need to repeatedly execute the same action. \n\nConventional clickers fell short, as they typically restrict other PC activities once activated. This led me to develop an attachable-clicker that sends commands directly to the selected window, allowing users to continue using their computer while the clicker remains active.\n\nThe project is coded in C++ and leverages the Qt framework for its graphical user interface (GUI).",
     "imageUrl": "https://user-images.githubusercontent.com/11835209/106388860-af4fd180-63e0-11eb-87b1-bece9058c308.png",
     "liveUrl": "https://github.com/Napalys/Attachable-clicker/releases/tag/0.1.0",
     "sourceUrl": "https://github.com/Napalys/Attachable-clicker",
     "icons": [
-      {
-        "src": "cpp-logo.png",
-        "label": "C++"
-      }
+      { "src": "cpp-logo.png", "label": "C++" }
     ]
-  },
+  }
 ]
