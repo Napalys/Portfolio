@@ -67,5 +67,16 @@
     "icons": [
       { "src": "cpp-logo.png", "label": "C++" }
     ]
+  },
+
+  {
+    "title": "FireAI",
+    "description": "",
+    "imageUrl": "https://static.wixstatic.com/media/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png/v1/fill/w_600,h_348,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png",
+    "liveUrl": "https://www.robotto.ai/demo",
+    "sourceUrl": "",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" }
+    ]
   }
 ]
