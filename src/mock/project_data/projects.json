@@ -31,7 +31,9 @@
     "liveUrl": "https://www.ecdar.net/",
     "sourceUrl": "https://github.com/Ecdar/Reveaal",
     "icons": [
-      { "src": "rust-logo.png", "label": "Rust" }
+      { "src": "rust-logo.png", "label": "Rust" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" }
     ]
   },
 
@@ -42,7 +44,10 @@
     "liveUrl": "https://ojs.aaai.org/index.php/ICAPS/article/view/19843/19602",
     "sourceUrl": "https://github.com/DEIS-Tools/Swarm-Robotics",
     "icons": [
-      { "src": "cpp-logo.png", "label": "C++" }
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "cmake-logo.png", "label": "CMake" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "git-logo.png", "label": "Git" }
     ]
   },
 
@@ -53,7 +58,9 @@
     "liveUrl": "https://github.com/Napalys/Attachable-clicker/releases/tag/0.1.0",
     "sourceUrl": "https://github.com/Napalys/Attachable-clicker",
     "icons": [
-      { "src": "cpp-logo.png", "label": "C++" }
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "cmake-logo.png", "label": "CMake" },
+      { "src": "git-logo.png", "label": "Git" }
     ]
   },
 
@@ -76,7 +83,12 @@
     "liveUrl": "https://www.robotto.ai/demo",
     "sourceUrl": "",
     "icons": [
-      { "src": "cpp-logo.png", "label": "C++" }
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "docker-logo.png", "label": "Docker" }
     ]
   }
 ]
