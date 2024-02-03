@@ -67,18 +67,23 @@
 
   {
     "title": "Omnisight",
-    "description": "",
+    "description": "During my tenure at Robotto Company, I took on a key role in a project aimed at enhancing search and rescue drone operations. I was responsible for planning, designing, and overseeing a significant portion of the implementation process. Our objective was to develop a solution capable of autonomous flight across multiple drones, necessitating meticulous architectural planning for seamless testing and deployment. The backend was developed in C++, while the frontend utilized Android Java.\n\nThe primary goal of the project was to empower drones to autonomously search designated regions and assist search and rescue teams in swiftly locating missing individuals. Real-time detection of people was a critical aspect, with operations conducted at altitudes exceeding 100 meters. We focused on implementing functionalities such as autonomous navigation, terrain-adaptive flight, computer vision, and AI-driven object identification, ensuring accurate location data even in challenging environments.",
     "imageUrl": "https://static.wixstatic.com/media/8b18de_16995d58efd64344bafd16985b2e7b7e~mv2.png/v1/crop/x_203,y_57,w_1027,h_669/fill/w_722,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_16995d58efd64344bafd16985b2e7b7e~mv2.png%22",
     "liveUrl": "https://www.robotto.ai/omnisight",
     "sourceUrl": "",
     "icons": [
-      { "src": "cpp-logo.png", "label": "C++" }
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "docker-logo.png", "label": "Docker" }
     ]
   },
 
   {
     "title": "FireAI",
-    "description": "",
+    "description": "During my tenure at Robotto, I spearheaded the development of \"FireAI,\" a drone firefighter assisting tool aimed at revolutionizing wildfire management. Leveraging C++ for the backend and Java for the Android frontend, I played a pivotal role in crafting a comprehensive solution comprising autonomous navigation, radio communication, and computer vision for wildfire detection as well as area mapping.\n\nOur efforts culminated in a product capable of real-time fire detection and mapping, empowering users to make informed decisions swiftly. FireAI's edge-level computing prowess ensures timely updates, mitigating the reliance on outdated fire maps. \n\n In summary, my involvement in the FireAI project showcases my proficiency in C++ and Java, as well as my capacity to mentor and guide a dedicated team through the intricacies of developing innovative solutions for real-world challenges in wildfire management. Throughout the project, I assumed the role of a nurturing mentor, fostering a collaborative environment where team members felt empowered to share ideas, learn new concepts, and grow professionally.",
     "imageUrl": "https://static.wixstatic.com/media/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png/v1/fill/w_600,h_348,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png",
     "liveUrl": "https://www.robotto.ai/demo",
     "sourceUrl": "",
