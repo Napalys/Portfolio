@@ -83,7 +83,7 @@
 
   {
     "title": "FireAI",
-    "description": "During my tenure at Robotto, I spearheaded the development of \"FireAI,\" a drone firefighter assisting tool aimed at revolutionizing wildfire management. Leveraging C++ for the backend and Java for the Android frontend, I played a pivotal role in crafting a comprehensive solution comprising autonomous navigation, radio communication, and computer vision for wildfire detection as well as area mapping.\n\nOur efforts culminated in a product capable of real-time fire detection and mapping, empowering users to make informed decisions swiftly. FireAI's edge-level computing prowess ensures timely updates, mitigating the reliance on outdated fire maps. \n\n In summary, my involvement in the FireAI project showcases my proficiency in C++ and Java, as well as my capacity to mentor and guide a dedicated team through the intricacies of developing innovative solutions for real-world challenges in wildfire management. Throughout the project, I assumed the role of a nurturing mentor, fostering a collaborative environment where team members felt empowered to share ideas, learn new concepts, and grow professionally.",
+    "description": "\n\nDuring my tenure at Robotto, I spearheaded the development of \"FireAI,\" a drone firefighter assisting tool aimed at revolutionizing wildfire management. Leveraging C++ for the backend and Java for the Android frontend, I played a pivotal role in crafting a comprehensive solution comprising autonomous navigation, radio communication, and computer vision for wildfire detection as well as area mapping.\n\nOur efforts culminated in a product capable of real-time fire detection and mapping, empowering users to make informed decisions swiftly. FireAI's edge-level computing prowess ensures timely updates, mitigating the reliance on outdated fire maps. \n\n In summary, my involvement in the FireAI project showcases my proficiency in C++ and Java, as well as my capacity to mentor and guide a dedicated team through the intricacies of developing innovative solutions for real-world challenges in wildfire management. Throughout the project, I assumed the role of a nurturing mentor, fostering a collaborative environment where team members felt empowered to share ideas, learn new concepts, and grow professionally.",
     "imageUrl": "https://static.wixstatic.com/media/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png/v1/fill/w_600,h_348,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png",
     "liveUrl": "https://www.robotto.ai/demo",
     "sourceUrl": "",
@@ -94,6 +94,20 @@
       { "src": "android-logo.png", "label": "Android" },
       { "src": "git-logo.png", "label": "Git" },
       { "src": "docker-logo.png", "label": "Docker" }
+    ]
+  },
+
+  {
+    "title": "FutMote",
+    "description": "During my internship at Futarque, I collaborated on the development of a mobile app aimed at enhancing user experience with their smart TV box. Working alongside another intern, we spearheaded the creation of a versatile solution to seamlessly control Futarque products.\n\nOur tasks encompassed building the server-side infrastructure in C++, housed within the smart TV box, while crafting the frontend mobile application using Java. From inception to execution, we crafted every aspect, from fundamental controls to frontend design, and established robust communication channels.\n\nThe resulting app, FutMote, offers intuitive functionalities including remote control, touchscreen to mouse emulation, and joystick support. With a focus on simplicity and efficacy, FutMote empowers users to effortlessly navigate their entertainment experience.\n\nThis project provided me with valuable hands-on experience in Android app development, backend integration, and collaborative teamwork, all contributing to the achievement of enhancing user interaction with Futarque's products.",
+    "imageUrl": "https://play-lh.googleusercontent.com/9PhvVJdCE9KFjBF-ej56fOaz1iE_nxMjc06xPt6x0P8PpZ9sOp0r2shFAfDmoJp-dQkQ=w2560-h1440",
+    "liveUrl": "https://play.google.com/store/apps/details?id=com.futarque.futmote&hl=en&gl=US",
+    "sourceUrl": "",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" }
     ]
   }
 ]
