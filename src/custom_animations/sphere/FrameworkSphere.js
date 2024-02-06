@@ -13,6 +13,7 @@ import LeetCodeLogo from '../../images/logos/LeetCode_logo_black.png';
 import AndroidLogo from '../../images/logos/android-logo.png';
 import CLogo from '../../images/logos/c-logo.png';
 import ArchLogo from '../../images/logos/arch-logo.png';
+import CMakeLogo from '../../images/logos/cmake-logo.png';
 
 const Texts = [
   { url: CppLogo, alt: 'Cpp' },
@@ -29,6 +30,7 @@ const Texts = [
   { url: AndroidLogo, alt: 'Android' },
   { url: CLogo, alt: 'C' },
   { url: ArchLogo, alt: 'Arch Linux' },
+  { url: CMakeLogo, alt: 'CMake' },
 ];
 
 export default function initializeFrameworkSphere(isMobile) {

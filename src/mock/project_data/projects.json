@@ -1,7 +1,7 @@
 [
   {
     "title": "First Person Shooter",
-    "description": "One of my old side projects during my bachelor, it's completely open-source and may act as guidance for someone who just starts developing. I would highly recommend taking a look first at the Blueprint system, before digging into C++ code. The code is compatible with the Unreal Engine 4.26 version",
+    "description": "Diving into my academic archive, you'll stumble upon a side project birthed during my bachelor's days—an open-source venture that reflects the technical intricacies I grappled with in the realm of game development. This project, seamlessly compatible with Unreal Engine 4.26, stands as a testament to my hands-on experience in both the Blueprint system and C++ code.\n\nDelving into the intricacies, this first-person shooter project unfolds as a dynamic arena where players navigate tunnels, confronting challenges imposed by a goblin invasion. Not merely a game, but a robust system where players progress, unlocking new abilities and power-ups.",
     "imageUrl": "https://user-images.githubusercontent.com/11835209/112525104-d56e6e00-8da0-11eb-8b5b-8267b034ffc5.gif",
     "liveUrl": "https://github.com/Napalys/FirstPersonShooter",
     "sourceUrl": "https://github.com/Napalys/FirstPersonShooter",
@@ -14,8 +14,8 @@
 
   {
     "title": "j-Ecdar",
-    "description": "test",
-    "imageUrl": "https://private-user-images.githubusercontent.com/11835209/292636307-4cec1d8b-bc4d-4e9c-b177-8803a2f3eba5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDMzNTAxMzgsIm5iZiI6MTcwMzM0OTgzOCwicGF0aCI6Ii8xMTgzNTIwOS8yOTI2MzYzMDctNGNlYzFkOGItYmM0ZC00ZTljLWIxNzctODgwM2EyZjNlYmE1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjIzVDE2NDM1OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUxYWY0MzdkMDEyMTNlY2FiOTEwMDA5MjA2MWE2YWJhMmQ1NzU5OGYxMTZhNWE1MjMwMWI1YWZmNmM3NWU0NmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-4HfPoSp4c1jpXtCc_dCFcuTiy-2JnLgbM32_h3Xrfg",
+    "description": "J-Ecdar my master's thesis project, I focused on advancing the field of model-checking tools, specifically targeting the Uppaal branch called Ecdar. Ecdar operates with models based on Timed Input/Output Automata, supporting essential features such as refinement, composition, and conjunction. \n\nMy two-semester endeavor aimed at creating Jecdar, an open-source model-checking engine, aligning with the capabilities of Ecdar 0.10. The initial phase involved extending Jecdar's existing features, but unexpected challenges arose during the verification of the refinement feature. This led to a profound investigation into state-space exploration issues and inconsistencies between Ecdar 0.10's implementation and theory.",
+    "imageUrl": "https://private-user-images.githubusercontent.com/11835209/296446754-8e7715fc-dc0e-4362-bb9f-77039c6ae9aa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU2NzcyNjAsIm5iZiI6MTcwNTY3Njk2MCwicGF0aCI6Ii8xMTgzNTIwOS8yOTY0NDY3NTQtOGU3NzE1ZmMtZGMwZS00MzYyLWJiOWYtNzcwMzljNmFlOWFhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE5VDE1MDkyMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZkMjc2ZDNkNzIyZTA3N2IzOGU3MTRkMDQzZjQyZDA5ZWRlYjFiNjVmY2RjN2RkMWY0M2RkMmI2OTk2N2RjODMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.teyCbqE7UBj9-M_1o5IT7eGd8M0wVjHyXKjHkhN7fwc",
     "liveUrl": "https://vbn.aau.dk/ws/files/305757029/JECDAR_0.2.pdf",
     "sourceUrl": "https://github.com/Ecdar/j-Ecdar",
     "icons": [
@@ -26,12 +26,88 @@
 
   {
     "title": "Reveaal",
-    "description": "test",
-    "imageUrl": "https://private-user-images.githubusercontent.com/11835209/292636348-d5518f10-0067-45dc-abe1-d41470cbda96.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDMzNTAxOTUsIm5iZiI6MTcwMzM0OTg5NSwicGF0aCI6Ii8xMTgzNTIwOS8yOTI2MzYzNDgtZDU1MThmMTAtMDA2Ny00NWRjLWFiZTEtZDQxNDcwY2JkYTk2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjIzVDE2NDQ1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJiNmU4YmUwN2JkMDIxMzg5MjRkMGIwN2M5NTYxYTg3YWEzZTIzM2JhYjYzYjE0N2FmMzNiNDk2MDRiNTU3NDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.mtjkTJ5tV2wur18p9UwKqJG755Un6Oheb9DC859iC6Y",
+    "description": "Reveaal, a project I have had pleasure to participate in during my research assistant role, introduces a robust model-checking engine for ECDAR (Environment for Compositional Design and Analysis of Real Time Systems) crafted entirely in Rust. Committed to open-source principles, Reveaal aims to replicate the functionalities of J-Ecdar, providing a platform for efficient verification processes.\n\nThe engine leverages the ECDAR DBM Library for handling operations on temporal zones, ensuring seamless integration with existing tools. Designed to operate efficiently across multiple cores and potentially scale over diverse machines, the engine sets ambitious goals in terms of correctness and performance.",
+    "imageUrl": "https://private-user-images.githubusercontent.com/11835209/296446508-2701bd4f-c65f-470a-b4fb-ed972dda4893.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU2Nzg5OTcsIm5iZiI6MTcwNTY3ODY5NywicGF0aCI6Ii8xMTgzNTIwOS8yOTY0NDY1MDgtMjcwMWJkNGYtYzY1Zi00NzBhLWI0ZmItZWQ5NzJkZGE0ODkzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE5VDE1MzgxN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNhOWRjMTQyYjQ4NTgzYWE5NTg0MzEzNTY4YmIxYTYyZTM4ZTA4MmYxMmY5YTgwNDAxNTQ5YzY1ZjA5MDZlZjYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.MryM2Lmjo9KZw5bKZ04lE_5xTs197RkWVmfjKy0R5Ig",
     "liveUrl": "https://www.ecdar.net/",
     "sourceUrl": "https://github.com/Ecdar/Reveaal",
     "icons": [
-      { "src": "rust-logo.png", "label": "Rust" }
+      { "src": "rust-logo.png", "label": "Rust" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" }
+    ]
+  },
+
+  {
+    "title": "Swarm-Robotics",
+    "description": "During my tenure as a research assistant, I actively contributed to the realm of Swarm Robotics. My primary focus involved the development of a seamless integration between the Argos3 simulation and Uppaal, a crucial aspect of the project. \n\nOur collective goal was to design an efficient mechanism for a swarm of robots to collaboratively execute a set of tasks without causing interference. Leveraging Uppaal's capabilities, we aimed to create an optimal system where robots could operate harmoniously, avoiding conflicts while performing intricate tasks. This innovative approach holds promising applications, such as optimizing processes in manufacturing environments like a Lego factory, where robots could work collaboratively to assemble custom orders of Lego bricks without disruption. ",
+    "imageUrl": "https://github-production-user-asset-6210df.s3.amazonaws.com/11835209/298175201-af8b6791-aca9-4263-90b7-cb5507227a6c.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240119T192419Z&X-Amz-Expires=300&X-Amz-Signature=bf3dac09696053ec2ff8f2e95e5cc4ae7b1a63bbd056c7cd9e4f4270a465893d&X-Amz-SignedHeaders=host&actor_id=11835209&key_id=0&repo_id=353656169",
+    "liveUrl": "https://ojs.aaai.org/index.php/ICAPS/article/view/19843/19602",
+    "sourceUrl": "https://github.com/DEIS-Tools/Swarm-Robotics",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "cmake-logo.png", "label": "CMake" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "git-logo.png", "label": "Git" }
+    ]
+  },
+
+  {
+    "title": "Attachable-clicker",
+    "description": "I, like many software enthusiasts, have spent numerous hours glued to my computer screen, whether engaged in playing video games or performing other tasks. The monotony and tedium of repetitive actions prompted me to seek a solution through automation. \"Attachable-clicker\" is a product of one such instance when I was gaming with friends and faced the need to repeatedly execute the same action. \n\nConventional clickers fell short, as they typically restrict other PC activities once activated. This led me to develop an attachable-clicker that sends commands directly to the selected window, allowing users to continue using their computer while the clicker remains active.\n\nThe project is coded in C++ and leverages the Qt framework for its graphical user interface (GUI).",
+    "imageUrl": "https://user-images.githubusercontent.com/11835209/106388860-af4fd180-63e0-11eb-87b1-bece9058c308.png",
+    "liveUrl": "https://github.com/Napalys/Attachable-clicker/releases/tag/0.1.0",
+    "sourceUrl": "https://github.com/Napalys/Attachable-clicker",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "cmake-logo.png", "label": "CMake" },
+      { "src": "git-logo.png", "label": "Git" }
+    ]
+  },
+
+
+  {
+    "title": "Omnisight",
+    "description": "During my tenure at Robotto Company, I took on a key role in a project aimed at enhancing search and rescue drone operations. I was responsible for planning, designing, and overseeing a significant portion of the implementation process. Our objective was to develop a solution capable of autonomous flight across multiple drones, necessitating meticulous architectural planning for seamless testing and deployment. The backend was developed in C++, while the frontend utilized Android Java.\n\nThe primary goal of the project was to empower drones to autonomously search designated regions and assist search and rescue teams in swiftly locating missing individuals. Real-time detection of people was a critical aspect, with operations conducted at altitudes exceeding 100 meters. We focused on implementing functionalities such as autonomous navigation, terrain-adaptive flight, computer vision, and AI-driven object identification, ensuring accurate location data even in challenging environments.",
+    "imageUrl": "https://static.wixstatic.com/media/8b18de_16995d58efd64344bafd16985b2e7b7e~mv2.png/v1/crop/x_203,y_57,w_1027,h_669/fill/w_722,h_471,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_16995d58efd64344bafd16985b2e7b7e~mv2.png%22",
+    "liveUrl": "https://www.robotto.ai/omnisight",
+    "sourceUrl": "",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "docker-logo.png", "label": "Docker" }
+    ]
+  },
+
+  {
+    "title": "FireAI",
+    "description": "During my tenure at Robotto, I spearheaded the development of \"FireAI,\" a drone firefighter assisting tool aimed at revolutionizing wildfire management. Leveraging C++ for the backend and Java for the Android frontend, I played a pivotal role in crafting a comprehensive solution comprising autonomous navigation, radio communication, and computer vision for wildfire detection as well as area mapping.\n\nOur efforts culminated in a product capable of real-time fire detection and mapping, empowering users to make informed decisions swiftly. FireAI's edge-level computing prowess ensures timely updates, mitigating the reliance on outdated fire maps. \n\n In summary, my involvement in the FireAI project showcases my proficiency in C++ and Java, as well as my capacity to mentor and guide a dedicated team through the intricacies of developing innovative solutions for real-world challenges in wildfire management. Throughout the project, I assumed the role of a nurturing mentor, fostering a collaborative environment where team members felt empowered to share ideas, learn new concepts, and grow professionally.",
+    "imageUrl": "https://static.wixstatic.com/media/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png/v1/fill/w_600,h_348,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b18de_892923281c8e48abb28d6832b65bf5a6~mv2.png",
+    "liveUrl": "https://www.robotto.ai/demo",
+    "sourceUrl": "",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "linux-tux-logo.png", "label": "Ubuntu" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" },
+      { "src": "docker-logo.png", "label": "Docker" }
+    ]
+  },
+
+  {
+    "title": "FutMote",
+    "description": "During my internship at Futarque, I collaborated on the development of a mobile app aimed at enhancing user experience with their smart TV box. Working alongside another intern, we spearheaded the creation of a versatile solution to seamlessly control Futarque products.\n\nOur tasks encompassed building the server-side infrastructure in C++, housed within the smart TV box, while crafting the frontend mobile application using Java. From inception to execution, we crafted every aspect, from fundamental controls to frontend design, and established robust communication channels.\n\nThe resulting app, FutMote, offers intuitive functionalities including remote control, touchscreen to mouse emulation, and joystick support. With a focus on simplicity and efficacy, FutMote empowers users to effortlessly navigate their entertainment experience.\n\nThis project provided me with valuable hands-on experience in Android app development, backend integration, and collaborative teamwork, all contributing to the achievement of enhancing user interaction with Futarque's products.",
+    "imageUrl": "https://play-lh.googleusercontent.com/9PhvVJdCE9KFjBF-ej56fOaz1iE_nxMjc06xPt6x0P8PpZ9sOp0r2shFAfDmoJp-dQkQ=w2560-h1440",
+    "liveUrl": "https://play.google.com/store/apps/details?id=com.futarque.futmote&hl=en&gl=US",
+    "sourceUrl": "",
+    "icons": [
+      { "src": "cpp-logo.png", "label": "C++" },
+      { "src": "java-logo.png", "label": "Java" },
+      { "src": "android-logo.png", "label": "Android" },
+      { "src": "git-logo.png", "label": "Git" }
     ]
   }
 ]

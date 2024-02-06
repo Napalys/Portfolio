@@ -30,7 +30,14 @@ const ProjectItem = ({ project }) => (
       </div>
     </Tilt>
     <div className="project-text">
-      <div className="project-description">{project.description}</div>
+      <div className="project-description">
+        {project.description.split('\n').map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </div>
     </div>
     <div className="project-buttons">
       <a
@@ -96,27 +103,19 @@ const carouselProps = {
     hasPrev && <CustomArrow direction="left" onClick={onClickHandler} />,
   renderArrowNext: (onClickHandler, hasNext) =>
     hasNext && <CustomArrow direction="right" onClick={onClickHandler} />,
-
 };
 
 const Projects = () => (
-  <section
-    id="projects"
-    style={{
-      gridArea: '1/1',
-      zIndex: 0,
-      position: 'relative',
-      placeItems: 'center',
-      display: 'grid',
-    }}
-  >
+  <section id="projects">
     <div className="project-wrapper">
       <Title title="Projects" />
-      <Carousel {...carouselProps}>
-        {projects.map((project) => (
-          <ProjectItem key={project.id} project={project} />
-        ))}
-      </Carousel>
+      <div className="carousel-wrapper">
+        <Carousel {...carouselProps}>
+          {projects.map((project) => (
+            <ProjectItem key={project.id} project={project} />
+          ))}
+        </Carousel>
+      </div>
     </div>
   </section>
 );
