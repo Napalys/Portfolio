@@ -131,17 +131,16 @@
   -webkit-text-fill-color: transparent;
   border: 2px solid;
   border-image-slice: 1;
-  font-size: 30px; /* Adjust size as needed */
+  font-size: 50px;
   cursor: pointer;
   z-index: 20;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 10px;
+  padding: 5px;
 }
 
 .custom-arrow:hover {
-  /* Adjust hover effect as desired, maybe a slight change in gradient or opacity */
   opacity: 0.8;
 }
 
