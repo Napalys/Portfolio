@@ -10,8 +10,8 @@ class About extends React.Component {
 
     // Initial state
     this.state = {
-      isDesktop: window.innerWidth > 869,
-      isMobile: window.innerWidth <= 869,
+      isDesktop: typeof window !== 'undefined' ? window.innerWidth > 869 : false,
+      isMobile: false,
     };
 
     // Variants for desktop (side fade)
@@ -28,7 +28,10 @@ class About extends React.Component {
   }
 
   getAnimationVariants() {
-    return window.matchMedia('(pointer: coarse)').matches;
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(pointer: coarse)').matches;
+    }
+    return false;
   }
 
   componentDidMount() {

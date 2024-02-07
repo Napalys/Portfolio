@@ -92,7 +92,7 @@ const CustomArrow = ({ direction, onClick }) => {
 };
 const carouselProps = {
   showArrows: true,
-  autoPlay: false,
+  autoPlay: true,
   infiniteLoop: true,
   showStatus: false,
   showIndicators: false,

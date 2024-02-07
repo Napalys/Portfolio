@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/Portfolio',
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -29,7 +30,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#02aab0`,
         display: `standalone`,
-        icon: 'src/images/favicon.png',
+        icon: 'src/images/logos/cpp-logo.png',
       },
     },
   ],

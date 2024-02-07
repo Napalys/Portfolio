@@ -12,17 +12,10 @@ import {
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    if (window.innerWidth > 869) {
-      this.state = {
-        isDesktop: true,
-        isMobile: false,
-      };
-    } else {
-      this.state = {
-        isMobile: true,
-        isDesktop: false,
-      };
-    }
+    this.state = {
+      isDesktop: typeof window !== 'undefined' ? window.innerWidth > 869 : false,
+      isMobile: false,
+    };
   }
 
   componentDidMount() {
@@ -40,7 +33,8 @@ class Header extends React.Component {
       cta: "Let's talk ?",
     };
     const { isDesktop } = this.state;
-    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+    const isMobile =
+      typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
     // Variants for desktop (left fade)
     const desktopVariants = {

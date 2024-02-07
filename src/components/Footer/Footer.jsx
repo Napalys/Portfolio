@@ -7,7 +7,7 @@ import GithubButtons from './GithubButtons';
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
   const { networks } = footer;
-  const isMobile = window.matchMedia('(pointer: coarse)').matches;
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
   return (
     <footer className="footer navbar-static-bottom">
