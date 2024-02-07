@@ -25,7 +25,7 @@ const ProjectItem = ({ project }) => (
       <h3 className="project-wrapper__text-title">{project.title}</h3>
     </div>
     <Tilt options={tiltOptions}>
-      <div className="thumbnail rounded">
+      <div className="tproject-image-wrapper">
         <img className="project-image" src={project.imageUrl} alt="" />
       </div>
     </Tilt>
@@ -92,7 +92,7 @@ const CustomArrow = ({ direction, onClick }) => {
 };
 const carouselProps = {
   showArrows: true,
-  autoPlay: true,
+  autoPlay: false,
   infiniteLoop: true,
   showStatus: false,
   showIndicators: false,
