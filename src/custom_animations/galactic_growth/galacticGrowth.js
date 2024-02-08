@@ -22,13 +22,32 @@ const { body } = document;
   }
 })(25);
 
-// Generation of stars
-(function(n) {
-  for (let i = 0; i < n; i++) {
-    const div = document.createElement('div');
-    div.className = i % 20 === 0 ? 'star star--big' : i % 9 === 0 ? 'star star--medium' : 'star';
-    div.setAttribute('style', 'top:' + Math.round(Math.random() * height) + 'px;left:' + Math.round(Math.random() * width)
-      + 'px;animation-duration:' + (Math.round(Math.random() * 3000) + 3000) + 'ms;animation-delay:' + Math.round(Math.random() * 3000) + 'ms;');
-    body.appendChild(div);
+const getStarSize = (index) => {
+  switch (true) {
+    case index % 20 === 0:
+      return 'star star--big';
+    case index % 9 === 0:
+      return 'star star--medium';
+    default:
+      return 'star';
   }
-})(300);
+};
+
+// Generation of stars
+(() => {
+  const numStars = 300;
+
+  for (let i = 0; i < numStars; i += 1) {
+    const div = document.createElement('div');
+    const classes = getStarSize(i);
+    const style = `
+      top: ${Math.round(Math.random() * height)}px;
+      left: ${Math.round(Math.random() * width)}px;
+      animation-duration: ${Math.round(Math.random() * 3000) + 3000}ms;
+      animation-delay: ${Math.round(Math.random() * 3000)}ms;
+    `;
+    div.className = classes;
+    div.setAttribute('style', style);
+    document.body.appendChild(div);
+  }
+})();
