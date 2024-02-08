@@ -35,8 +35,7 @@ const getStarSize = (index) => {
 
 // Generation of stars
 (() => {
-  const numStars = 300;
-
+  const numStars = (height * width) / 20000;
   for (let i = 0; i < numStars; i += 1) {
     const div = document.createElement('div');
     const classes = getStarSize(i);
