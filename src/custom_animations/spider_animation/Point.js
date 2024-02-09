@@ -31,11 +31,13 @@ export default class Point {
   }
 
   updateActiveStatus(target) {
+    const screenSize = window.innerWidth * window.innerHeight;
+    const interactionRadius = screenSize / 500;
     const targetDistance = Math.abs(getDistance(target, this));
     const thresholds = [
-      { limit: 4000, active: 0.5, circleActive: 0.6 },
-      { limit: 20000, active: 0.3, circleActive: 0.3 },
-      { limit: 40000, active: 0.1, circleActive: 0.1 },
+      { limit: interactionRadius, active: 0.5, circleActive: 0.6 },
+      { limit: interactionRadius * 5, active: 0.3, circleActive: 0.3 },
+      { limit: interactionRadius * 10, active: 0.1, circleActive: 0.1 },
     ];
 
     // Find the first threshold that matches the target distance
