@@ -12,6 +12,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    z-index: 20;
   }
 
   .project-wrapper {
@@ -49,6 +50,7 @@
   justify-content: center;
   margin: auto;
   padding-left: 3%;
+  z-index: 1;
 
   @media (max-width: 1050px) {
     grid-template-columns: 1fr;

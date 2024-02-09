@@ -57,7 +57,7 @@ class About extends React.Component {
     return (
       <div
         className="hero-container"
-        style={{ display: 'grid', gridTemplateRows: 'auto 1fr', zIndex: 0 }}
+        style={{ display: 'grid', gridTemplateRows: 'auto 1fr', zIndex: 1 }}
       >
         <section
           id="about"
