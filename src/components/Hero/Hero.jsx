@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import animateIndexPage from '../../custom_animations/spider_animation/Spider';
 import Menu from '../Menu/Menu';
-import '../../custom_animations/galactic_growth/galacticGrowth';
+import GalacticGrowth from '../../custom_animations/galactic_growth/galacticGrowth';
 
 import {
   enableCustomScrolling,
@@ -55,6 +55,7 @@ class Header extends React.Component {
 
     return (
       <div id="hero-canvas" className="hero-container" style={{ display: 'grid' }}>
+        <GalacticGrowth />
         <canvas
           id="demo-canvas"
           style={{
