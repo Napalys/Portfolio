@@ -6,7 +6,9 @@
   border-bottom: 0;
   color: $white-color;
   border-top: 0;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") center;
+  background: var(--background-image-url) center;
+  background-size: cover;
+
   padding-bottom: 3rem;
   min-height: 100vh;
 

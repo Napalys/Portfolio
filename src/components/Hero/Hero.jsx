@@ -17,6 +17,7 @@ class Header extends React.Component {
     this.state = {
       isDesktop: typeof window !== 'undefined' ? window.innerWidth > 869 : false,
       isMobile: false,
+      backgroundImageUrl: 'https://wallpaperaccess.com/full/506444.jpg',
     };
   }
 
@@ -28,13 +29,22 @@ class Header extends React.Component {
     }
   }
 
+  handleBackgroundChange = (event) => {
+    const newBackgroundImageUrl = event.target.value;
+    this.setState({ backgroundImageUrl: newBackgroundImageUrl });
+    document.documentElement.style.setProperty(
+      '--background-image-url',
+      `url(${newBackgroundImageUrl})`
+    );
+  };
+
   render() {
     const { title, name, cta } = {
       title: 'Hi, my name is',
       name: 'Napalys Klicius',
       cta: "Let's talk ?",
     };
-    const { isDesktop } = this.state;
+    const { isDesktop, backgroundImageUrl } = this.state;
     const isMobile =
       typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
@@ -75,6 +85,7 @@ class Header extends React.Component {
             position: 'relative',
             placeItems: 'center',
             display: 'grid',
+            backgroundImage: `url(${backgroundImageUrl})`,
           }}
         >
           {!isMobile && <Menu menuBtnClicked={menuBtnClicked} />}
@@ -111,6 +122,38 @@ class Header extends React.Component {
                 >
                   {cta}
                 </button>
+                <select
+                  onChange={this.handleBackgroundChange}
+                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 500 }}
+                >
+                  <option value="https://wallpaperaccess.com/full/7044.jpg">URL 1</option>
+                  <option value="https://wallpaperaccess.com/full/7042.jpg">URL 2</option>
+                  <option value="https://wallpaperaccess.com/full/7039.jpg">URL 3</option>
+                  <option value="https://wallpaperaccess.com/full/7035.jpg">URL 4</option>
+                  <option value="https://wallpaperaccess.com/full/7056.jpg">URL 5</option>
+                  <option value="https://wallpaperaccess.com/full/7062.jpg">URL 6</option>
+                  <option value="https://wallpaperaccess.com/full/7067.jpg">URL 7</option>
+                  <option value="https://wallpaperaccess.com/full/21516.jpg">URL 8</option>
+                  <option value="https://wallpaperaccess.com/full/21526.jpg">URL 9</option>
+                  <option value="https://wallpaperaccess.com/full/21527.jpg">URL 10</option>
+                  <option value="https://wallpaperaccess.com/full/21573.jpg">URL 11</option>
+                  <option value="https://wallpaperaccess.com/full/1258619.jpg">URL 12</option>
+                  <option value="https://wallpaperaccess.com/full/50923.jpg">URL 13</option>
+                  <option value="https://wallpaperaccess.com/full/1258657.jpg">URL 14</option>
+                  <option value="https://wallpaperaccess.com/full/3205373.jpg">URL 15</option>
+                  <option value="https://wallpaperaccess.com/full/957762.jpg">URL 16</option>
+                  <option value="https://wallpaperaccess.com/full/3205404.jpg">URL 17</option>
+                  <option value="https://wallpaperaccess.com/full/506444.jpg">URL 18</option>
+                  <option value="https://wallpaperaccess.com/full/1198721.jpg">URL 19</option>
+                  <option value="https://wallpaperaccess.com/full/3205680.jpg">URL 20</option>
+                  <option value="https://wallpaperaccess.com/full/133256.jpg">URL 21</option>
+                  <option value="https://wallpaperaccess.com/full/1506.jpg">URL 22</option>
+                  <option value="https://wallpaperaccess.com/full/7046.jpg">URL 23</option>
+                  <option value="https://wallpaperaccess.com/full/506444.jpg">URL 24</option>
+                  <option value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg">
+                    URL 25
+                  </option>
+                </select>
               </p>
             </motion.div>
           </Container>
