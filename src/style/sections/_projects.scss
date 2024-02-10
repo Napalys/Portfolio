@@ -3,9 +3,13 @@
   width: 100%;
   height: 100%;
   min-height: 100vh;
+  background: var(--background-image-url) center;
   background-size: cover;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg") center;
   padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .carousel-wrapper {
     width: 100%;
@@ -171,14 +175,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Initially, fill the container's width */
-  max-width: 1000px; /* Set maximum width */
-  height: 0; /* Initialize height to 0 */
-  padding-top: 55%; /* Set height as a percentage of the width */
-  overflow: hidden; /* Ensure the image is clipped to fit the dimensions */
-  border-radius: 15px; /* Apply border radius if desired */
-  position: relative; /* Positioning context for absolute positioned children */
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 55%;
+  position: relative;
 }
+
 
 .project-image {
   position: absolute; /* Position image absolutely within its wrapper */
@@ -228,10 +231,10 @@
 }
 
 .project-description {
+  margin: auto;
+  text-align: center;
   font-size: 1.7rem;
   line-height: 1.5;
-  margin-top: 10px;
-  margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
 }
