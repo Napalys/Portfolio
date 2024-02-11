@@ -44,7 +44,7 @@ class About extends React.Component {
     // const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
     const { paragraphOne, paragraphTwo, paragraphThree, resume, linkedIn } = {
       paragraphOne:
-        "Hello there! I'm Napalys Kličius, a passionate software developer with a master's degree in Computer Science. I thrive on being a Problem Solver, armed with a diverse skill set that extends from object-oriented programming to logical and functional paradigms. ",
+        "Hello there! I'm Napalys Klicius, a passionate software developer with a master's degree in Computer Science. I thrive on being a Problem Solver, armed with a diverse skill set that extends from object-oriented programming to logical and functional paradigms. ",
       paragraphTwo: 'Intrigued? If you want to know more about me check out my LinkedIn or GitHub!',
       paragraphThree:
         'The sphere on the left displays the technologies I have the most experience with. Fun fact about me, my favorite programming language is C++.',
