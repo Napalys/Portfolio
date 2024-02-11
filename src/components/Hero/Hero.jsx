@@ -17,7 +17,8 @@ class Header extends React.Component {
     this.state = {
       isDesktop: typeof window !== 'undefined' ? window.innerWidth > 869 : false,
       isMobile: false,
-      backgroundImageUrl: 'https://wallpaperaccess.com/full/506444.jpg',
+      backgroundImageUrl:
+        "url('https://github.com/Napalys/Portfolio/assets/11835209/34a00297-c785-46ce-90c3-95e07d2e6de1')",
     };
   }
 
@@ -124,7 +125,13 @@ class Header extends React.Component {
                 </button>
                 <select
                   onChange={this.handleBackgroundChange}
-                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 500 }}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    zIndex: 500,
+                    visibility: 'hidden',
+                  }}
                 >
                   <option value="https://wallpaperaccess.com/full/7044.jpg">URL 1</option>
                   <option value="https://wallpaperaccess.com/full/7042.jpg">URL 2</option>
@@ -150,7 +157,7 @@ class Header extends React.Component {
                   <option value="https://wallpaperaccess.com/full/1506.jpg">URL 22</option>
                   <option value="https://wallpaperaccess.com/full/7046.jpg">URL 23</option>
                   <option value="https://wallpaperaccess.com/full/506444.jpg">URL 24</option>
-                  <option value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg">
+                  <option value="https://github.com/Napalys/Portfolio/assets/11835209/1e502469-024a-46af-82c9-a7ec3eeffec0">
                     URL 25
                   </option>
                 </select>
