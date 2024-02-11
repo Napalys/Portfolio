@@ -66,7 +66,7 @@ export default function animateIndexPage() {
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(closestPoint.x, closestPoint.y);
     });
-    ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
+    ctx.strokeStyle = `rgba(0, 204, 255, ${p.active})`;
     ctx.stroke();
   }
 

@@ -32,7 +32,7 @@ export default class Point {
 
   updateActiveStatus(target) {
     const screenSize = window.innerWidth * window.innerHeight;
-    const interactionRadius = screenSize / 500;
+    const interactionRadius = screenSize / 250;
     const targetDistance = Math.abs(getDistance(target, this));
     const thresholds = [
       { limit: interactionRadius, active: 0.5, circleActive: 0.6 },
