@@ -3,18 +3,21 @@ import disableOriginalScrolling from './disableNormalScroll';
 let counter = 0;
 let sections;
 let scrollInAction = false;
+const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+const scrollOptions = isFirefox ? { behavior: 'instant' } : { behavior: 'smooth' };
 
 export function enableCustomScrolling() {
   disableOriginalScrolling();
   sections = document.getElementsByTagName('section');
   function performScroll(delta) {
+    if (scrollInAction) return;
     const buttons = document.getElementsByClassName('round-button');
     buttons[counter].classList.remove('onVisitSection');
     counter += delta;
     counter = Math.max(counter, 0);
     counter = Math.min(counter, sections.length - 1);
     buttons[counter].classList.add('onVisitSection');
-    sections[counter].scrollIntoView({ behavior: 'smooth' }); // switch to smooth for animation
+    sections[counter].scrollIntoView(scrollOptions);
     scrollInAction = true;
     setTimeout(() => {
       scrollInAction = false;
@@ -23,7 +26,6 @@ export function enableCustomScrolling() {
   document.addEventListener('wheel', (event) => {
     event.preventDefault();
     if (scrollInAction) return;
-    console.log(event.deltaY); // Check the deltaY value
     const delta = Math.sign(event.deltaY);
     performScroll(delta);
   });
@@ -44,11 +46,11 @@ export const heroBtnClicked = () => {
   if (buttons.length !== 0) {
     buttons[counter].classList.remove('onVisitSection');
     counter = 3;
-    sections[counter].scrollIntoView({ behavior: 'smooth' });
+    sections[counter].scrollIntoView(scrollOptions);
     buttons[counter].classList.add('onVisitSection');
   } else {
     const sections1 = document.getElementsByTagName('section');
-    sections1[3].scrollIntoView({ behavior: 'smooth' });
+    sections1[3].scrollIntoView(scrollOptions);
   }
   scrollInAction = true;
   setTimeout(() => {
@@ -61,7 +63,7 @@ export const menuBtnClicked = (menuID, sectionID) => {
   const buttons = document.getElementsByClassName('round-button');
   buttons[counter].classList.remove('onVisitSection');
   document.getElementById(menuID).classList.add('onVisitSection');
-  document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
+  document.getElementById(sectionID).scrollIntoView(scrollOptions);
   const sectionsArray = Array.from(sections);
   counter = sectionsArray.findIndex((section) => section.id === sectionID);
   scrollInAction = true;
@@ -71,11 +73,12 @@ export const menuBtnClicked = (menuID, sectionID) => {
 };
 
 export function resetToBeginning() {
+  if (scrollInAction) return;
   const buttons = document.getElementsByClassName('round-button');
   buttons[counter].classList.remove('onVisitSection');
   counter = 0;
   buttons[counter].classList.add('onVisitSection');
-  sections[counter].scrollIntoView({ behavior: 'smooth' });
+  sections[counter].scrollIntoView(scrollOptions);
   scrollInAction = true;
   setTimeout(() => {
     scrollInAction = false;
