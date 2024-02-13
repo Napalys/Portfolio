@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
 import GithubButtons from './GithubButtons';
+import { resetToBeginning } from '../../custom_animations/custom_scrolling/customScrolling';
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
@@ -12,10 +13,8 @@ const Footer = () => {
   return (
     <footer className="footer navbar-static-bottom">
       <Container>
-        <span className="back-to-top">
-          <Link to="hero" smooth duration={1000}>
-            <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
-          </Link>
+        <span className="back-to-top" onClick={resetToBeginning}>
+          <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
         </span>
         <div className="social-links">
           {networks &&

@@ -14,7 +14,7 @@ export function enableCustomScrolling() {
     counter = Math.max(counter, 0);
     counter = Math.min(counter, sections.length - 1);
     buttons[counter].classList.add('onVisitSection');
-    sections[counter].scrollIntoView({ behavior: 'instant' }); // switch to smooth for animation
+    sections[counter].scrollIntoView({ behavior: 'smooth' }); // switch to smooth for animation
     scrollInAction = true;
     setTimeout(() => {
       scrollInAction = false;
@@ -69,3 +69,15 @@ export const menuBtnClicked = (menuID, sectionID) => {
     scrollInAction = false;
   }, 750);
 };
+
+export function resetToBeginning() {
+  const buttons = document.getElementsByClassName('round-button');
+  buttons[counter].classList.remove('onVisitSection');
+  counter = 0;
+  buttons[counter].classList.add('onVisitSection');
+  sections[counter].scrollIntoView({ behavior: 'smooth' });
+  scrollInAction = true;
+  setTimeout(() => {
+    scrollInAction = false;
+  }, 750);
+}
