@@ -72,7 +72,7 @@ export const menuBtnClicked = (menuID, sectionID) => {
   }, 750);
 };
 
-export function resetToBeginning() {
+function resetToBeginning() {
   if (scrollInAction) return;
   const buttons = document.getElementsByClassName('round-button');
   buttons[counter].classList.remove('onVisitSection');
@@ -83,4 +83,25 @@ export function resetToBeginning() {
   setTimeout(() => {
     scrollInAction = false;
   }, 750);
+}
+
+function smoothScrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+function isMobileDevice() {
+  return (
+    typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
+  );
+}
+
+export function scrollTop() {
+  if (isMobileDevice()) {
+    smoothScrollToTop();
+  } else {
+    resetToBeginning();
+  }
 }
